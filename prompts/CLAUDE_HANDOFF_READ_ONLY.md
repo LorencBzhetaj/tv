@@ -1,0 +1,2 @@
+# CLAUDE CODE — Read-only handoff intake
+Read `CLAUDE.md`, `AGENTS.md`, `docs/HANDOFF.md`, `docs/PHASE_TRACKER.md`, `docs/MULTI_AGENT_WORKFLOW.md` and relevant specs. Inspect git status, branch, recent commits and test commands. Do not edit code, commit, push, install or run destructive operations. Verify Codex claims against actual files and evidence. Report current status, blockers and a scoped next step; stop for user authorization.

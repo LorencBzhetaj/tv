@@ -1,0 +1,2 @@
+# Preserve exact planning-asset bytes so manifest hashes survive checkout.
+* -text

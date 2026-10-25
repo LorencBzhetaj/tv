@@ -1,0 +1,382 @@
+{
+  "version": "3.5",
+  "package_version": "3.5",
+  "edition": "Multi-Agent Ready — documentation corrections 2026-10-26",
+  "status": "planning_only",
+  "repository_url": "https://github.com/LorencBzhetaj/tv.git",
+  "development_started": false,
+  "generated_date": "2026-10-26",
+  "scope": "All working planning assets except PACKAGE_MANIFEST.json itself and .git metadata. Original input ZIP unchanged.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 83,
+      "sha256": "bdefbd1e7f2539270e953b1383faa102cfe166fcb009488256517ef1001ab367"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 406,
+      "sha256": "5f6cbcffc80e8741e599d8349fde626b4fb4e915efefb63964cc415c9ebdf10b"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 3372,
+      "sha256": "092fc1b6bb0ef59fc04c01c1667df38be1d82914482204fb7c7d69f7309d63e2"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 7794,
+      "sha256": "c41dd5526a942658328bd063d93c1940426bcbd0632fbd0b01fb46ca5afd0eaa"
+    },
+    {
+      "path": "docs/ACCEPTANCE_TESTS.md",
+      "bytes": 6811,
+      "sha256": "e912031daed4fef134167a63563b576971612739ea88c8ab69cc3311fe5d5c79"
+    },
+    {
+      "path": "docs/ARCHITECTURE_DECISIONS.md",
+      "bytes": 4472,
+      "sha256": "ec95833c45b890a585ef9960c1b6c5967d91a2dbe0c7ef753f82a7c8dbff1b2d"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 9588,
+      "sha256": "9e70f6aec96b2f76831a195254627a7fbd3ec419c7d38ef9889c8f9320275312"
+    },
+    {
+      "path": "docs/DOCUMENTATION_REVIEW_2026-10-26.md",
+      "bytes": 2911,
+      "sha256": "f2ddb2e5d67a7a9786b876bb78e32a3c67c413f0df4e67ce4c6a2ea3ce485558"
+    },
+    {
+      "path": "docs/HANDOFF.md",
+      "bytes": 4103,
+      "sha256": "f6bead87665de2819a00987657cf5e0f9bb872bcffb23f45a319c747aa93af23"
+    },
+    {
+      "path": "docs/HOW_TO_START_SQ.md",
+      "bytes": 3106,
+      "sha256": "4ee4e5fd797750c58810b37f7cf912107c0db0db85604ed2426e6e7d485e02c5"
+    },
+    {
+      "path": "docs/LORI_CAST_SPEC.md",
+      "bytes": 7598,
+      "sha256": "b113a42ef9383f2873d1a959e158c3d628b224c9245c0ac2f30c8241b6ae629a"
+    },
+    {
+      "path": "docs/MASTER_PROMPT.md",
+      "bytes": 5530,
+      "sha256": "d919fda17fbbe66577d0ebf2041ecffd2e45e9889158195f81bca7cbcaf099fd"
+    },
+    {
+      "path": "docs/MOCKUP_INDEX.md",
+      "bytes": 2736,
+      "sha256": "0ecb2991ef8889dedc1fd0378554a039638d94b6927623c24ccfbe0c84206186"
+    },
+    {
+      "path": "docs/MULTI_AGENT_WORKFLOW.md",
+      "bytes": 2350,
+      "sha256": "73b83f5d85c4ffd4ef1e04b84456675752bd8762b7bfa46b8b3131e8276b67ec"
+    },
+    {
+      "path": "docs/PHASE_00_COMPATIBILITY_PLAN.md",
+      "bytes": 10645,
+      "sha256": "de6145728005d705615612d040fb3687e9bc1a9b2a869078587cda40ffd47090"
+    },
+    {
+      "path": "docs/PHASE_TRACKER.md",
+      "bytes": 3694,
+      "sha256": "d23ffba553c6a7ed598f8ec2208885db75b0a66adbcfe7df0d0fc8aa4414194a"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "bytes": 5661,
+      "sha256": "22c262da2db5abeb856bb17570ab7c77fb0034ac4fe03a14fcc42848ec3a17ac"
+    },
+    {
+      "path": "docs/TV_ENHANCEMENTS_SPEC.md",
+      "bytes": 2391,
+      "sha256": "0a47811a68e6bd9e1e5f0248e9c423726b223140931c5950a31229396e6c19c6"
+    },
+    {
+      "path": "docs/UI_UX_SPEC.md",
+      "bytes": 7262,
+      "sha256": "a4537798a506cb44d0d1cf80700cec7d29584fa5432ac7863894212f95b388f8"
+    },
+    {
+      "path": "mockups/LORI_Cast_4_Screens.png",
+      "bytes": 1783615,
+      "sha256": "cc69ab84564127de3ded214adb4bf0a6b1746761a9eb47d0afd95add43ab8910"
+    },
+    {
+      "path": "mockups/LORI_TV_All_Interfaces.png",
+      "bytes": 2182017,
+      "sha256": "4f229f8c15859a0fb77b38ea7d4d85f978da942e37f68cb7bbb3bf803cd48497"
+    },
+    {
+      "path": "mockups/manager/01_dashboard.png",
+      "bytes": 30369,
+      "sha256": "3700dd08e4406a9fc8a066a8484931fe0a413176e783f0a02c9e86041cfd155c"
+    },
+    {
+      "path": "mockups/manager/02_channels.png",
+      "bytes": 30396,
+      "sha256": "419582669c745598c11d7c4a70a4d05ef6addb7c9d841e6f73f3593947bfd4cd"
+    },
+    {
+      "path": "mockups/manager/03_source_imports.png",
+      "bytes": 30348,
+      "sha256": "10df672fb9c8900b1ca90414ffc885987ae145dbceb90238430623469a360752"
+    },
+    {
+      "path": "mockups/manager/04_epg_mapping.png",
+      "bytes": 30363,
+      "sha256": "4abf67fb1b65946f16e10c1f02229eae7a5528ac4058ddb5a97bef048e446dc1"
+    },
+    {
+      "path": "mockups/manager/05_movies_&_series.png",
+      "bytes": 30359,
+      "sha256": "a44f40840138c5bc9a5a2614280e4aa441134bc09f3cacd4a85433a43237be26"
+    },
+    {
+      "path": "mockups/manager/06_profiles.png",
+      "bytes": 30409,
+      "sha256": "0452ea8193296992dbb3aab65b13c508d04aa209820e558aa261ce275873efb5"
+    },
+    {
+      "path": "mockups/manager/07_settings.png",
+      "bytes": 30345,
+      "sha256": "47dcc1d4d8478d19283f9936865f78c91f16c541235b88751f3edd4e0fe08af6"
+    },
+    {
+      "path": "mockups/manager/08_audit_log.png",
+      "bytes": 30417,
+      "sha256": "c6139a36c37d66f4f084fa0f09c75efb9f1333a1d0afd9fff8e07ddbb819b7d7"
+    },
+    {
+      "path": "mockups/remote/01_pairing.png",
+      "bytes": 102063,
+      "sha256": "8a3853acc7d5839b0b549ed37cfaedc3e0ecad9d215f7b62a1ae72e303c1a0c0"
+    },
+    {
+      "path": "mockups/remote/02_remote.png",
+      "bytes": 96220,
+      "sha256": "dc57385deda3b6801188480536651b8e3daf11908e88ee731c866939545fd4cf"
+    },
+    {
+      "path": "mockups/remote/03_keyboard_search.png",
+      "bytes": 131399,
+      "sha256": "a7646a3d47dbfd244206a766813639bd92a5cb8b87b70b152e2e76f716266eb1"
+    },
+    {
+      "path": "mockups/remote/04_voice_search.png",
+      "bytes": 133988,
+      "sha256": "cf0bdaa0ce64fe9214de9365714860fd7a75df28692f337ba505b89f19cb372b"
+    },
+    {
+      "path": "mockups/remote/05_send_to_tv.png",
+      "bytes": 138708,
+      "sha256": "cfe30a07758594702c4066becf8891440211e3ef2354868bbd03b035e7160780"
+    },
+    {
+      "path": "mockups/remote/06_remote_settings.png",
+      "bytes": 99674,
+      "sha256": "dd515bcfa15b8193f6a0ce04b07811d412711618219bcaa513a89376982f59e0"
+    },
+    {
+      "path": "mockups/remote/cast_error.png",
+      "bytes": 296921,
+      "sha256": "afdd65ef21d842a4ceb8dbb79a7d96bdc553c5f3b6e83ec48370e9b05c686c51"
+    },
+    {
+      "path": "mockups/remote/cast_picker.png",
+      "bytes": 268295,
+      "sha256": "276854b4a17fedc7c43bf788a96666955d8bd0af8924a2ace6a2aa4ee6664e44"
+    },
+    {
+      "path": "mockups/remote/casting_now.png",
+      "bytes": 787105,
+      "sha256": "a7760c0fbe8cfa5f096aaa975931443ee3b642221a32bad3e520377413867c43"
+    },
+    {
+      "path": "mockups/tv/01_home.png",
+      "bytes": 552265,
+      "sha256": "d5ee7648491d51aadaed66d3e03b10fb85c4351be8a19165e4422b8e16d81023"
+    },
+    {
+      "path": "mockups/tv/02_live_tv.png",
+      "bytes": 317912,
+      "sha256": "ca8a27e0a8e3a80c2c1cf41b8ab7a38633401686f4a29de8107c05edb5664090"
+    },
+    {
+      "path": "mockups/tv/03_tv_guide.png",
+      "bytes": 271146,
+      "sha256": "f42158acb3425075d86b58c7468dbb03b72dcbc024244d3ee8cade82af9abc00"
+    },
+    {
+      "path": "mockups/tv/04_sports.png",
+      "bytes": 244303,
+      "sha256": "9a38a52fe9239a54a059b5514b387476f8fa3e5e5c5197f96786a35c3c70f876"
+    },
+    {
+      "path": "mockups/tv/05_movies.png",
+      "bytes": 500874,
+      "sha256": "74f8247b5851d2c637b6eef3d5302bb3c7a3543b22d67828191b6ebb8bb632d6"
+    },
+    {
+      "path": "mockups/tv/06_series.png",
+      "bytes": 497626,
+      "sha256": "abefef86736d619dec9768a48f8a5bda7f7274d76bed9a6c96616ccefad62b69"
+    },
+    {
+      "path": "mockups/tv/07_search.png",
+      "bytes": 373969,
+      "sha256": "7175caf1056e7704b6448769ccebfdac3cbad14c4d5a8224f5be9975ecf63215"
+    },
+    {
+      "path": "mockups/tv/08_search_results.png",
+      "bytes": 353218,
+      "sha256": "cd9da6158d95f7d9c1e4dea518b576ea3f1ce760a4955fe4e1ba09e76fbf5b44"
+    },
+    {
+      "path": "mockups/tv/09_movie_details.png",
+      "bytes": 457276,
+      "sha256": "88b43d66f9917670accd64c3648c03b9ea0c7eb76f3826ede4e0c1982f104256"
+    },
+    {
+      "path": "mockups/tv/10_series_details.png",
+      "bytes": 322877,
+      "sha256": "7383a18601628e3cb58b8e30d90a944f67618fb22ef378930a2082c2794da9cd"
+    },
+    {
+      "path": "mockups/tv/11_player.png",
+      "bytes": 378307,
+      "sha256": "061748021cee6613913fb92a25b78df092db2495ff85d9727dc4ae26f959383a"
+    },
+    {
+      "path": "mockups/tv/12_player_settings.png",
+      "bytes": 189489,
+      "sha256": "714535d0772279aaf75206a4f65c2042b1ce696b001e6875a7c1078c63e2e253"
+    },
+    {
+      "path": "mockups/tv/13_watchlist.png",
+      "bytes": 359390,
+      "sha256": "47c6e51022fc61fdb591c7d2bb65e5b9abc0e061bb62168ae080477a8671bd2a"
+    },
+    {
+      "path": "mockups/tv/14_profiles.png",
+      "bytes": 267352,
+      "sha256": "555d4724dd84cc5f042dd56f160e71d905a82e5e843b441ff3e4d9f67c87b183"
+    },
+    {
+      "path": "mockups/tv/15_parental_controls.png",
+      "bytes": 175149,
+      "sha256": "21c8251518692d069f5862dfbe578961dc602cf089c02e1f1eccadc965e1450c"
+    },
+    {
+      "path": "mockups/tv/16_settings.png",
+      "bytes": 195739,
+      "sha256": "29532e6245e73b3ed8298b4a9124912e6e6e32c371fc7126b82c85fec5c373b4"
+    },
+    {
+      "path": "mockups/tv/17_pair_phone.png",
+      "bytes": 305375,
+      "sha256": "5a25d3009b069ca2898101539b72ac84ef64e48555beaefc79c9c4eb72dcd0ea"
+    },
+    {
+      "path": "mockups/tv/cast_incoming.png",
+      "bytes": 313331,
+      "sha256": "e6fd7b98b28d04a8e38bb9b6de81fc15ce00b7234508bb4d5e1a25a6ec0cff35"
+    },
+    {
+      "path": "prompts/00_BOOTSTRAP_READ_ONLY.md",
+      "bytes": 706,
+      "sha256": "bbd7517dcecc99c73497180b67caf91ab1873921061bd5410910dc22eee63fe2"
+    },
+    {
+      "path": "prompts/00B_V34_SCOPE_REVIEW_READ_ONLY.md",
+      "bytes": 391,
+      "sha256": "f942eb7d5005486a78882ca344c5a30115c7391c4ae67cd724efbb9ccb64babc"
+    },
+    {
+      "path": "prompts/01_PHASE_00_COMPATIBILITY.md",
+      "bytes": 1798,
+      "sha256": "1b924886fe2d9ba68afd64430beff13c1d2ac04ba2d39d43fa892df9f44c46c6"
+    },
+    {
+      "path": "prompts/02_PHASE_01_UI_UX.md",
+      "bytes": 1763,
+      "sha256": "e1ef411bbd7067231e92940759455ccc61f1768baa809960e36f9bf8487cf53d"
+    },
+    {
+      "path": "prompts/03_PHASE_02_TV_SHELL.md",
+      "bytes": 1430,
+      "sha256": "971a3461bdd18e416e3ebb78fbc4474b514d71485fe62f932ae81894b78e830e"
+    },
+    {
+      "path": "prompts/04_PHASE_03_LIVE_TV_EPG.md",
+      "bytes": 1685,
+      "sha256": "5a2f7078b2361a4039808f431a2f0b1bca6c0d6955482c5d5b52ed414808b871"
+    },
+    {
+      "path": "prompts/05_PHASE_04_MOVIES_SERIES_SEARCH.md",
+      "bytes": 1449,
+      "sha256": "2d4e326dc14f7110957dbfd5907322ba91b6f714b0b60a5c83b1cd1a7eef5894"
+    },
+    {
+      "path": "prompts/06_PHASE_05_PROFILES_PERSONALIZATION.md",
+      "bytes": 1424,
+      "sha256": "0cde1778735a4a01bb18f1867d724f21846905f6827da6e566dc357c3ae27351"
+    },
+    {
+      "path": "prompts/07_PHASE_06_SPORTS_SMART_PLAYER.md",
+      "bytes": 1790,
+      "sha256": "ee310d8f645aff5a5500e6d1832e46c701307560d4d5ecd064e4c4e5b97c4955"
+    },
+    {
+      "path": "prompts/08_PHASE_07_PHONE_REMOTE.md",
+      "bytes": 1744,
+      "sha256": "fb85d44800a5595fb6878ebd0dd52ba876e81c671a2321058ec1c71e8c10d2af"
+    },
+    {
+      "path": "prompts/08B_PHASE_07B_LORI_CAST.md",
+      "bytes": 2179,
+      "sha256": "f35c89d7a01d87aef621f928c2e92f1e2a3442b3d72377ce3b087abb698a5a55"
+    },
+    {
+      "path": "prompts/09_PHASE_08_MANAGER.md",
+      "bytes": 1437,
+      "sha256": "fa3d9f68e08d7fcd3f6f3af70b8434d635e4681b892d83166e7cf671d62c9b65"
+    },
+    {
+      "path": "prompts/10_PHASE_09_FINAL_RELEASE.md",
+      "bytes": 1783,
+      "sha256": "dd69a341b67543acc946730f31cb96fd8eee20cf7841b020f5a9bfb45925806b"
+    },
+    {
+      "path": "prompts/99_CODEX_REVIEW.md",
+      "bytes": 652,
+      "sha256": "e1a908a7c2af512cee1eb8f2281bbf659092a76577d7a8fa22c06fd6622c9eb0"
+    },
+    {
+      "path": "prompts/CLAUDE_HANDOFF_READ_ONLY.md",
+      "bytes": 442,
+      "sha256": "4e13571e609fafe18d1c32268108b35535779984e7702f9289a5fdb5918ed3a3"
+    },
+    {
+      "path": "prompts/CODEX_00_BOOTSTRAP_READ_ONLY.md",
+      "bytes": 1751,
+      "sha256": "86234e51514d5ed2d8233ace4e9173af1ac484404b454c441f0f86ecba0861d2"
+    },
+    {
+      "path": "prompts/CODEX_HANDOFF_READ_ONLY.md",
+      "bytes": 416,
+      "sha256": "a8316c3ba0992aa10351c065e5beab5466400c15eb67534eb01728e604166c5b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2791,
+      "sha256": "6f08f8b3350f3b8e8facda310574ae7727e0d76be138660874e04706fd00102d"
+    }
+  ]
+}

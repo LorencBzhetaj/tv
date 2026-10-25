@@ -1,0 +1,32 @@
+# Local credentials, signing material and private device evidence
+.env
+.env.*
+!.env.example
+*.p12
+*.pfx
+*.pem
+*.key
+*.jks
+*.keystore
+*.crt
+*.cer
+certificates/
+certs/
+secrets/
+private/
+**/private/
+profiles.xml
+credentials.json
+secrets.json
+*.local.json
+*.local.xml
+
+# Local Tizen/IDE workspace state and generated diagnostic packages
+.metadata/
+.tizen/
+*.wgt
+*.wgt.sig
+
+# Local OS files
+Thumbs.db
+.DS_Store

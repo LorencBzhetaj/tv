@@ -1,0 +1,2 @@
+# CODEX — Read-only handoff intake
+Read `AGENTS.md`, `CLAUDE.md`, `docs/HANDOFF.md`, `docs/PHASE_TRACKER.md`, `docs/ROADMAP.md` and relevant specs. Inspect git status, branch, recent commits and tests. Do not edit code, commit, push, install or run destructive operations. Report completed work with evidence, inconsistencies, missing tests, blockers and the smallest safe next phase. Stop for user authorization.
