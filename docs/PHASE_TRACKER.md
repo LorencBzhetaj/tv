@@ -6,6 +6,7 @@
 |---|---|---|---|
 | 00 Compatibility | COMPLETED (accepted playback/navigation scope) | R6 MP4 and controls PASS; R8 HTTPS HLS >30s + Stop PASS; remote PASS. Deferred gates listed below | Physical results and checkpoint commit/push approved; checkpoint published |
 | 01 UI/UX specification | READY_FOR_REVIEW (finalized closure baseline) | 37 concepts reviewed; final routes/focus/states/tokens; core decisions approved; later layouts explicitly deferred | Primary decisions Yes; closure checkpoint/Phase02 execution No |
+| 01.5 Interactive design preview | APPROVED — pending successful Git checkpoint | User visually approved; Full View default; Play/Watch direct immersive; OK controls; Back hides visible controls, otherwise Stop/Close + route/focus/scroll restoration; simulated only | Yes; checkpoint commit/push authorized; Phase02 NOT started |
 | 02 Tizen shell | PENDING | None | No |
 | 03 Live TV/EPG | PENDING | None | No |
 | 04 Movies/Series/Search | PENDING | None | No |

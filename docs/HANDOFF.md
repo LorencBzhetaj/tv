@@ -3,10 +3,29 @@
 **Project:** LORI TV (Samsung Tizen + Remote PWA + Manager)  
 **Canonical remote:** https://github.com/LorencBzhetaj/tv.git  
 **Package:** v3.5 baseline; **development:** Phase 00 diagnostic only  
-**Current agent:** Codex (Phase 01 specification closure)  
+**Current agent:** Codex (Phase 01.5 browser design preview)
 **Next agent:** Codex or Claude after user review; inspect current files first  
-**Current phase:** Phase 01 approved-scope specification finalized; closure READY_FOR_REVIEW. Phase02 proposals await approval; diagnostic checkpoint preserved.  
-**Approved scope:** Phase 01 documentation/specification only; no production UI, diagnostic changes, builds, device actions, dependencies, commit or push.
+**Current phase:** Phase 01 committed at f174f9ec1c406aea834f18352bf23b160c782d92. Phase 01.5 interactive preview visually APPROVED, pending successful Git checkpoint. Phase 02 has not started.
+**Approved scope:** Temporary fixture-only browser preview, approved Full View/direct immersive UX revision, minimal documentation repair and eleven-file checkpoint commit/push; no diagnostic changes, TV actions or dependencies.
+
+## Latest Phase 01.5 revision — Full View and direct immersive Player
+
+- User's FINAL UX UPDATE supersedes earlier uniform Player Back/normal-entry wording. Full View defaults on; Standard View is a separate persistent preference. Menu opens trapped overlay navigation; Settings/F toggles view outside inputs/dialogs while preserving route/focus/scroll.
+- Channel Watch/movie Play/episode Play enters immersive simulated playback directly. OK reveals temporary controls; Back dismisses topmost dialog, then visible immersive controls, then Stop/Close + origin when controls are hidden. Normal Player Back stops/closes. Explicit Fullscreen/Exit Fullscreen preserves play/pause/progress; playing controls auto-hide after four seconds, paused controls remain accessible. Rapid Back is guarded for 450 ms.
+- Immersive surface fills application viewport; picture uses contain/16:9 fixture letterboxing, no real media, browser Fullscreen API or AVPlay. Interface view, video presentation and browser F11 are distinct. Production native display/release validation remains pending.
+- Revision paths: preview/tv-ui/{app.js,styles.css,index.html,README.md}, docs/{UI_UX_SPEC.md,ACCEPTANCE_TESTS.md,PHASE_TRACKER.md,HANDOFF.md}, PACKAGE_MANIFEST.json (changed tracked-document checksums only). Earlier uncommitted preview fixture/server work preserved.
+- Browser checks: all 11 primary routes in Full and Standard views, no horizontal content overflow in tested layout; keyboard/Tab overlay navigation, input/dialog F exclusion; direct immersive Live/movie/episode entry; OK reveal, four-second auto-hide, rapid Back dismissal, settings/transport/stop Back layers; seek/pause/play retained through Normal/immersive changes; episode-3 focus and scroll 156 restored, including view toggles. Surface measured 425×612 viewport with contained ~16:9 picture. No console errors/warnings observed; user visual approval received; native TV behavior remains pending. Node syntax, diff whitespace and manifest checks passed. No physical-TV evidence claimed.
+- Status: user visually APPROVED Phase 01.5, pending successful Git checkpoint. Phase 02 not started or authorized; one approved checkpoint commit/push only. Earlier preview/session records below are historical where superseded here.
+
+## Phase 01.5 preview — 2026-10-27
+
+- Entry: main, origin/main, clean working tree at f174f9ec1c406aea834f18352bf23b160c782d92. Earlier Phase 01 session notes below are historical.
+- New files: preview/tv-ui/{index.html,styles.css,fixtures.js,app.js,server.cjs,README.md}. This handoff updated; its existing manifest checksum refreshed. Approved specifications, original mockups and LORITVDiagnostic unchanged.
+- Launch from repo: `node preview/tv-ui/server.cjs`; open `http://127.0.0.1:4173`; Ctrl+C stops. Existing Node only, loopback static server, no dependencies. See preview README for controls and limitations.
+- Screens: Home/sidebar, Live TV, Guide, Movies, Series/episodes, Search, Favorites, Watchlist, Details, simulated Player, Profiles, Settings; lightweight Sports/connection placeholders. Fixture-only explicit playback, no AVPlay/media/backend. Navy/blue tokens and proportional reference canvas preserved.
+- Checks: JavaScript syntax and static asset HTTP checks; browser keyboard Enter/Back, Player return, card focus restoration, Favorites sync, fixture search, English/Albanian sample resources, modal focus wrap, loading/empty/error states. Browser console errors/warnings: none observed in smoke test. Browser evidence is not physical-TV acceptance.
+- Visual review: user APPROVED the interactive preview, including Full View default and direct immersive playback/OK/Back restoration. Sample explanatory text remains partly English. No production focus architecture is selected by this prototype.
+- Next: complete the approved eleven-file Phase 01.5 Git checkpoint after validation; report its SHA externally without a follow-up documentation commit. Phase 02 production shell, dependencies and device work still require separate approval.
 
 ## Repository state (fill in when working in local repo)
 - Local path: C:/Users/Public/tv

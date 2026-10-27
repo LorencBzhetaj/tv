@@ -40,8 +40,8 @@
     },
     {
       "path": "docs/ACCEPTANCE_TESTS.md",
-      "bytes": 17795,
-      "sha256": "e0cd191f251aaf81981dcf42c93985664df456721c072292f4387e5130f052e4"
+      "bytes": 19533,
+      "sha256": "45dbbc9e03d863b3726255d46df4a353d2b80243306da137e77666e4c427f74c"
     },
     {
       "path": "docs/ARCHITECTURE_DECISIONS.md",
@@ -60,8 +60,8 @@
     },
     {
       "path": "docs/HANDOFF.md",
-      "bytes": 43579,
-      "sha256": "e1aef667799077f3061f3d65c5953ce3e7c82fc30766f31df291ab35db689f6c"
+      "bytes": 47725,
+      "sha256": "168a26675ba726316cdda3efccced68409565f1671a2b6edb841828ca7b78661"
     },
     {
       "path": "docs/HOW_TO_START_SQ.md",
@@ -95,8 +95,8 @@
     },
     {
       "path": "docs/PHASE_TRACKER.md",
-      "bytes": 34833,
-      "sha256": "f0840a4c8a366edadb7de60164cdeac442953d32ea8d547c93be7ceca27cd3ef"
+      "bytes": 35166,
+      "sha256": "9cc63b34c76144a4dc1ff7e7b7812a4cd8c5ec67e682c25c32234bccc0d1f94d"
     },
     {
       "path": "docs/ROADMAP.md",
@@ -110,8 +110,8 @@
     },
     {
       "path": "docs/UI_UX_SPEC.md",
-      "bytes": 54356,
-      "sha256": "554bd96048abbf2fefbc52c487a96efbd7b954f983333fcfb5362ce7868d17ae"
+      "bytes": 57284,
+      "sha256": "677f88e30aa135b296a6f98eff23104ceda614d31a473d2db5b77c8ecb23abe3"
     },
     {
       "path": "mockups/LORI_Cast_4_Screens.png",

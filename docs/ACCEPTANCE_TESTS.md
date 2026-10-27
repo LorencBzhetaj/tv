@@ -141,7 +141,16 @@ Specification work COMPLETE for the approved initial-shell scope; closure artifa
 T01-01 disposition: 35 individual mockups + 2 boards REVIEWED; primary behaviors APPROVED; written closure baseline FINALIZED. Missing later-surface layouts explicitly DEFERRED by user, not Phase02 blockers without a direct dependency. Final closure/checkpoint approval remains pending. Do not report all future visual layouts or device acceptance as PASS.
 
 Future shell checks T02-04..07 supplement T02-01..03:
-- Player no-overlay Back (controls shown/hidden, fullscreen/normal) requests Stop then Close/release before returning to exact origin/item/scroll; no auto-mini-player/background playback. Overlay Back closes topmost input/menu only; next Back exits Player.
+- Final Phase 01.5 override: direct immersive Play/Watch; Back dismisses topmost menu, then visible immersive transport controls; hidden immersive controls or Normal Player Back request Stop then Close/release before exact origin/item/scroll restoration. No auto-mini-player/background playback.
+
+### Phase 01.5 presentation acceptance (browser prototype; production TV evidence pending)
+
+- Full View defaults on, content expands; Standard View retains sidebar. Menu overlay supports arrows/OK, traps focus and Back restores its invoker/scroll. F toggles only outside text inputs/dialogs; Settings exposes View Mode. Route and scroll persist across toggles, with deterministic focus fallback when a sidebar item becomes hidden.
+- Channel Watch, movie Play and episode Play start the fixture session directly in immersive mode with controls hidden. Video surface fills viewport; 16:9 fixture picture is contained without crop/stretch; no permanent sidebar/header/footer/timeline.
+- OK reveals Play/Pause-focused overlay. Live has channel/programme, supported Play/Pause and Stop/Close; VOD adds seek/time/settings. Playing controls auto-hide after four idle seconds; paused controls do not time out.
+- Back: settings closes before transport; visible immersive transport hides without stop; hidden immersive transport stops/closes directly to origin; Normal Player Back stops/closes directly. Explicit Stop/Close always releases/returns. Held/rapid Back cannot cause a second exit (preview: 450 ms guard).
+- Fullscreen/Exit Fullscreen preserves one session, pause/play and progress; normal Player provides clearly labeled Fullscreen. Interface mode and browser F11 do not affect this state machine.
+- Restore exact route/item/scroll after stop. No media, AVPlay, browser Fullscreen API, mini-player or hidden background playback in preview. Production controller release acknowledgment, aspect/display behavior and Samsung remote acceptance remain separately gated. Phase 02 remains unauthorized.
 - Duplicate Back during preparation/closing yields one pending exit. Stop/Close failure retains visible error/focus/origin and offers explicit Retry release/Exit; never navigates behind possibly active playback. VOD progress snapshot/save where supported; Live has no VOD resume offset.
 - Favorites membership per profile consistent across Home/Live/Favorites; add preserves invoker, remove moves to next/previous/empty Browse, save failure reverts state without focus loss.
 - Focus movement over Live channels never starts AVPlay; explicit selection may start one supported preview; route departure releases it; fixture shells do not claim actual live-source support.
