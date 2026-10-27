@@ -2,10 +2,10 @@
   "version": "3.5",
   "package_version": "3.5",
   "edition": "Multi-Agent Ready — documentation corrections 2026-10-26",
-  "status": "phase01_specification_finalized_closure_ready_for_review",
+  "status": "phase015_completed_free_first_content_engine_documentation_ready_for_review",
   "repository_url": "https://github.com/LorencBzhetaj/tv.git",
   "development_started": true,
-  "generated_date": "2026-10-27",
+  "generated_date": "2026-10-28",
   "scope": "Planning and branding assets only, excluding this manifest, .git metadata, application sources, generated output and ignored private machine configuration. Diagnostic source status is recorded in existing phase documents.",
   "files": [
     {
@@ -40,18 +40,18 @@
     },
     {
       "path": "docs/ACCEPTANCE_TESTS.md",
-      "bytes": 19533,
-      "sha256": "45dbbc9e03d863b3726255d46df4a353d2b80243306da137e77666e4c427f74c"
+      "bytes": 25504,
+      "sha256": "d9b17a986601d6c55f5d6197d5402cc2f6fe6687f80eb65c1032747a59370eed"
     },
     {
       "path": "docs/ARCHITECTURE_DECISIONS.md",
-      "bytes": 4472,
-      "sha256": "ec95833c45b890a585ef9960c1b6c5967d91a2dbe0c7ef753f82a7c8dbff1b2d"
+      "bytes": 11086,
+      "sha256": "ce293f05abaaf6fac7f1b0a916af43829b9c78e804cbeac7333026ba5fa8aa40"
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 9588,
-      "sha256": "9e70f6aec96b2f76831a195254627a7fbd3ec419c7d38ef9889c8f9320275312"
+      "bytes": 25034,
+      "sha256": "a29e8b9be8f342b544f4bc714bd4e1cd2c43f92b4d8b8d6d7da14fd0383dcd9e"
     },
     {
       "path": "docs/DOCUMENTATION_REVIEW_2026-10-26.md",
@@ -60,8 +60,8 @@
     },
     {
       "path": "docs/HANDOFF.md",
-      "bytes": 47725,
-      "sha256": "168a26675ba726316cdda3efccced68409565f1671a2b6edb841828ca7b78661"
+      "bytes": 50729,
+      "sha256": "b82ed241c092d5d3983d1013da7fe04d5b49f904142550257274bb3fb762c824"
     },
     {
       "path": "docs/HOW_TO_START_SQ.md",
@@ -95,23 +95,23 @@
     },
     {
       "path": "docs/PHASE_TRACKER.md",
-      "bytes": 35166,
-      "sha256": "9cc63b34c76144a4dc1ff7e7b7812a4cd8c5ec67e682c25c32234bccc0d1f94d"
+      "bytes": 36703,
+      "sha256": "c22a3ca87e96aeebb45cce2ce848346866f0076715eaaa0254022e301814169d"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 7392,
-      "sha256": "f6d654affd68fcc728f85a6a714818bebaf7f43bf259d8ee876a4406dbedc7ae"
+      "bytes": 9632,
+      "sha256": "4e94569d0498f713e4a6fd4c5c15a5bf01272446c28621acde522c79ea1aeab0"
     },
     {
       "path": "docs/TV_ENHANCEMENTS_SPEC.md",
-      "bytes": 2391,
-      "sha256": "0a47811a68e6bd9e1e5f0248e9c423726b223140931c5950a31229396e6c19c6"
+      "bytes": 2930,
+      "sha256": "69aec466880476ad33fa6cf23f04df371ed8699264c0e4ebb1c6e5cda4940882"
     },
     {
       "path": "docs/UI_UX_SPEC.md",
-      "bytes": 57284,
-      "sha256": "677f88e30aa135b296a6f98eff23104ceda614d31a473d2db5b77c8ecb23abe3"
+      "bytes": 59008,
+      "sha256": "f5b6c5a12b4a8f65b987c4d1af715a5438bce6bf8035165a1c40d317f0cb3022"
     },
     {
       "path": "mockups/LORI_Cast_4_Screens.png",

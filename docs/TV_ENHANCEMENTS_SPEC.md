@@ -11,6 +11,8 @@ CH+/CH− when available/registered; fallback to focusable previous/next actions
 ## C. Stream Health (v1 target)
 Observe player state (connecting, buffering, playing, stalled, failed), show status to user, retry a bounded number of times with backoff. Optionally switch among **preauthorized sources of the same channel**. No scraping, stream discovery, arbitrary probing or leaking private URLs. Source failure analytics are local/minimal and redacted by default.
 
+2026-10-28 clarification: scheduled discovery inside approved provider adapters belongs to Phase03A Content Engine, not player health scanning. Health/controller must enforce current provider allowlist, territory, expiry and revocation before every authorized alternative. No unknown fallback or automatic paid/backend activation. Main catalog removes known-unavailable sources; native failure and catalog/network validation remain distinct evidence. See ARCHITECTURE.md section 13 / ADR-005/008. No runtime implementation is authorized.
+
 ## D. In-app Mini Player / PiP (conditional)
 Aim for a mini-player within LORI TV while browsing other screens. **Not** system-wide PiP, and no assumption of multiple video decoders. Requires Phase 00 proof on exact Samsung firmware for AVPlay video-surface behavior, focus, overlays, lifecycle and memory. Feature flag OFF by default until proven. If unsupported, retain playback screen or offer return-to-player affordance. User approval required before choosing alternative.
 

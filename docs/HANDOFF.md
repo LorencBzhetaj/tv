@@ -2,11 +2,22 @@
 
 **Project:** LORI TV (Samsung Tizen + Remote PWA + Manager)  
 **Canonical remote:** https://github.com/LorencBzhetaj/tv.git  
-**Package:** v3.5 baseline; **development:** Phase 00 diagnostic only  
-**Current agent:** Codex (Phase 01.5 browser design preview)
+**Package:** v3.5 baseline; Phase00 diagnostic and Phase01.5 browser preview checkpoints preserved
+**Current agent:** Codex (free-first Content Engine documentation)
 **Next agent:** Codex or Claude after user review; inspect current files first  
-**Current phase:** Phase 01 committed at f174f9ec1c406aea834f18352bf23b160c782d92. Phase 01.5 interactive preview visually APPROVED, pending successful Git checkpoint. Phase 02 has not started.
-**Approved scope:** Temporary fixture-only browser preview, approved Full View/direct immersive UX revision, minimal documentation repair and eleven-file checkpoint commit/push; no diagnostic changes, TV actions or dependencies.
+**Current phase:** Phase01/01.5 completed; latest approved published checkpoint 170540900012a0bf67a1aa5e1a7d1c4dad125d46. Free-first Content Engine documentation READY_FOR_REVIEW. Phase02/Content Engine implementation has NOT started.
+**Approved scope:** Documentation-only architecture/ADR/roadmap/acceptance/status/manifest changes; no source, workflow, infrastructure/account, dependencies, builds/device actions or staging/commit/push.
+
+## Current free-first architecture handoff — 2026-10-28
+
+- User approved playable-only main catalog, automatic ingestion/updates without mandatory playlist/URL entry, global categories constrained by rights/territory, zero LORI-injected ads and acceptance/preservation of provider ads. No public URL/HTTP200 as rights/native playback proof.
+- Production Samsung AVPlay and Phase01.5 direct immersive Play/Watch -> OK controls -> Back hide visible transport -> hidden-controls Stop/Close + route/focus/scroll restoration remain authoritative. No automatic mini-player/background session. Existing diagnostics/preview are unchanged.
+- ADR-004/005/008 record approved policy versus still-unapproved host/named providers/runtime implementation. ARCHITECTURE.md section 13 is the canonical publisher/registry/eligibility/versioning/cache/revocation/resource/hosting contract. Recommend Actions + Pages conditionally; Cloudflare Pages is evaluated for header control; no hosting setup selected or performed.
+- Phase02: shell/controller/catalog interfaces using fixtures; Phase03A within 03: automatic approved Live/EPG and free-first publisher; Phase04 authorized playable VOD/metadata; Phase06 sports/advanced reliability; Phase08 full Manager only when needed. No phase auto-start.
+- Risks: actual user territory/provider shortlist/publication permissions unresolved; no guaranteed rich free catalog count; static public hosting excludes private/token/entitlement feeds; schedules may delay/drop/disable; online revocation target requires cache tests and offline revocation is delayed until lease expiry. No permanent backend/paid upgrade without approval. Source native evidence and catalog signing design remain implementation gates.
+- Entry verified main/HEAD 170540900012a0bf67a1aa5e1a7d1c4dad125d46, canonical origin, clean working tree. Current changes: eight existing docs (ARCHITECTURE, ARCHITECTURE_DECISIONS, ROADMAP, PHASE_TRACKER, HANDOFF, UI_UX_SPEC, ACCEPTANCE_TESTS, TV_ENHANCEMENTS_SPEC) + PACKAGE_MANIFEST.json; no new runtime files.
+- Validation scope: Markdown tables/links/ADR and phase consistency, source-byte manifest integrity, complete diff/scope/privacy review. CE-01..16 are new measurable PENDING tests, not run playback or provider tests. No Phase00 retest. Final validation results are returned with the report; no commit created.
+- Next: user reviews this documentation checkpoint and unresolved host/provider/territory decisions; explicit commit/push approval required. Phase02 remains separately unauthorized. Older dated session records below are historical, not current commands.
 
 ## Latest Phase 01.5 revision — Full View and direct immersive Player
 
@@ -15,7 +26,7 @@
 - Immersive surface fills application viewport; picture uses contain/16:9 fixture letterboxing, no real media, browser Fullscreen API or AVPlay. Interface view, video presentation and browser F11 are distinct. Production native display/release validation remains pending.
 - Revision paths: preview/tv-ui/{app.js,styles.css,index.html,README.md}, docs/{UI_UX_SPEC.md,ACCEPTANCE_TESTS.md,PHASE_TRACKER.md,HANDOFF.md}, PACKAGE_MANIFEST.json (changed tracked-document checksums only). Earlier uncommitted preview fixture/server work preserved.
 - Browser checks: all 11 primary routes in Full and Standard views, no horizontal content overflow in tested layout; keyboard/Tab overlay navigation, input/dialog F exclusion; direct immersive Live/movie/episode entry; OK reveal, four-second auto-hide, rapid Back dismissal, settings/transport/stop Back layers; seek/pause/play retained through Normal/immersive changes; episode-3 focus and scroll 156 restored, including view toggles. Surface measured 425×612 viewport with contained ~16:9 picture. No console errors/warnings observed; user visual approval received; native TV behavior remains pending. Node syntax, diff whitespace and manifest checks passed. No physical-TV evidence claimed.
-- Status: user visually APPROVED Phase 01.5, pending successful Git checkpoint. Phase 02 not started or authorized; one approved checkpoint commit/push only. Earlier preview/session records below are historical where superseded here.
+- Status: Phase01.5 user accepted and checkpoint successfully committed/pushed as 170540900012a0bf67a1aa5e1a7d1c4dad125d46. Phase02 not started; that Git authorization is fulfilled, not permission for a new commit. Earlier preview/session records below are historical where superseded here.
 
 ## Phase 01.5 preview — 2026-10-27
 
@@ -25,21 +36,21 @@
 - Screens: Home/sidebar, Live TV, Guide, Movies, Series/episodes, Search, Favorites, Watchlist, Details, simulated Player, Profiles, Settings; lightweight Sports/connection placeholders. Fixture-only explicit playback, no AVPlay/media/backend. Navy/blue tokens and proportional reference canvas preserved.
 - Checks: JavaScript syntax and static asset HTTP checks; browser keyboard Enter/Back, Player return, card focus restoration, Favorites sync, fixture search, English/Albanian sample resources, modal focus wrap, loading/empty/error states. Browser console errors/warnings: none observed in smoke test. Browser evidence is not physical-TV acceptance.
 - Visual review: user APPROVED the interactive preview, including Full View default and direct immersive playback/OK/Back restoration. Sample explanatory text remains partly English. No production focus architecture is selected by this prototype.
-- Next: complete the approved eleven-file Phase 01.5 Git checkpoint after validation; report its SHA externally without a follow-up documentation commit. Phase 02 production shell, dependencies and device work still require separate approval.
+- Checkpoint outcome: approved eleven-file Phase01.5 commit/push completed at 170540900012a0bf67a1aa5e1a7d1c4dad125d46; no follow-up commit was created. Phase02 production shell/dependencies/device work still require separate approval.
 
 ## Repository state (fill in when working in local repo)
 - Local path: C:/Users/Public/tv
 - Branch: main (tracks origin/main)
-- HEAD commit: 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2 (Phase00 checkpoint; verified at Phase01 entry)
-- Remote status: canonical origin; baseline pushed and remote hash verified in prior Git session
-- Working tree clean?: Clean at Phase01 entry; current planning-document/manifest edits uncommitted
+- HEAD commit: 170540900012a0bf67a1aa5e1a7d1c4dad125d46 (approved Phase01.5 checkpoint)
+- Remote status: canonical origin; this checkpoint's push/SHA verified in preceding Git session; no remote writes in current task
+- Working tree clean?: Clean at current entry; current documentation/manifest edits uncommitted and unstaged
 
 ## Completed with evidence
-- Planning package and conceptual mockups prepared; no runtime implementation.
+- Phase00 accepted diagnostics, Phase01 specification checkpoint and Phase01.5 approved browser prototype; no production TV shell/Content Engine implementation.
 
 ## Pending and known risks
-- Confirm Samsung model, firmware, Tizen version and developer-mode support on real device.
-- Prove .wgt signing/install, AVPlay/HTML5 formats, remote keys, PiP feasibility, pairing transport.
+- Closed accepted scope: Samsung UE50M70HAUXXH/Tizen10 diagnostics, signing/install, remote navigation, R6 MP4/R8 HTTPS HLS playback. Do not repeat without a directly relevant regression.
+- Open scope: new provider/format native evidence, DRM if later approved, PiP feasibility and pairing transport. Local HLS non-blocking FAIL; intentional-error recovery remains deferred.
 - Verify legal sources, APIs, licensing and actual supported stream formats.
 - External gallery/file/URL casting, security and privacy require design and real-device testing.
 - Outstanding dedicated mockups for external media and TV enhancements may require review.

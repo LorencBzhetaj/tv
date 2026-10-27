@@ -1,22 +1,29 @@
 # LORI TV — Phase tracker
 
-**As of 2026-10-27: Phase 00 playback/navigation checkpoint COMPLETED with user acceptance; checkpoint committed/pushed as 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2. R6 MP4 and R8 HTTPS HLS physical PASS. Local HLS non-blocking FAIL; intentional-error recovery deferred. Phase 01 specification finalized, closure READY_FOR_REVIEW; approved primary decisions recorded, Phase02 not authorized.**
+**As of 2026-10-28: Phase00 accepted playback/navigation checkpoint 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2; R6 MP4/R8 HTTPS HLS physical PASS, local HLS non-blocking FAIL and intentional-error recovery deferred. Phase01 completed/committed f174f9ec1c406aea834f18352bf23b160c782d92; Phase01.5 approved/committed/pushed 170540900012a0bf67a1aa5e1a7d1c4dad125d46. Free-first Content Engine product rules approved; documentation checkpoint READY_FOR_REVIEW. Phase02 and Content Engine implementation NOT started. Historical session entries below retain their original evidence/status.**
 
 | Phase | Status | Evidence | Approved by user? |
 |---|---|---|---|
 | 00 Compatibility | COMPLETED (accepted playback/navigation scope) | R6 MP4 and controls PASS; R8 HTTPS HLS >30s + Stop PASS; remote PASS. Deferred gates listed below | Physical results and checkpoint commit/push approved; checkpoint published |
-| 01 UI/UX specification | READY_FOR_REVIEW (finalized closure baseline) | 37 concepts reviewed; final routes/focus/states/tokens; core decisions approved; later layouts explicitly deferred | Primary decisions Yes; closure checkpoint/Phase02 execution No |
-| 01.5 Interactive design preview | APPROVED — pending successful Git checkpoint | User visually approved; Full View default; Play/Watch direct immersive; OK controls; Back hides visible controls, otherwise Stop/Close + route/focus/scroll restoration; simulated only | Yes; checkpoint commit/push authorized; Phase02 NOT started |
+| 01 UI/UX specification | COMPLETED (accepted scope) | Approved checkpoint f174f9ec1c406aea834f18352bf23b160c782d92; later deferred layouts preserved | Yes; not Phase02 execution approval |
+| 01.5 Interactive design preview | COMPLETED (accepted/published) | Checkpoint 170540900012a0bf67a1aa5e1a7d1c4dad125d46; Full View/direct immersive OK/Back restoration; simulated only | Yes; no production/native evidence inferred |
 | 02 Tizen shell | PENDING | None | No |
 | 03 Live TV/EPG | PENDING | None | No |
+| 03A Content Engine foundation (within 03) | PENDING implementation; architecture checkpoint READY_FOR_REVIEW | Free-first/product policy approved; ADR-004/005/008 and CE-01..16 specified, not executed | Documentation only; no workflow/hosting/code approval |
 | 04 Movies/Series/Search | PENDING | None | No |
 | 05 Profiles | PENDING | None | No |
 | 06 Sports/Player | PENDING | None | No |
 | 07 Remote | PENDING | None | No |
-| 08 Manager | PENDING | None | No |
+| 08 Manager | PENDING (full admin when needed) | Minimal publisher planned in 03A; full Manager deferred from initial MVP | No implementation approval |
 | 09 Release | PENDING | None | No |
 
 Statuses: PENDING → IN_PROGRESS → BLOCKED / READY_FOR_REVIEW → COMPLETED. Never set COMPLETED without command output or physical-device evidence and explicit user acceptance.
+
+## Current documentation gate — 2026-10-28
+
+User Final Content Engine Architecture Decisions (FREE-FIRST) approved policy/documentation changes only. ADR-004/005/008, ARCHITECTURE.md section 13, roadmap 03A boundary and CE-01..16 acceptance targets are documented, not implemented. Product decisions: playable-only automatic catalog without mandatory playlist entry; global categorization subject to rights/territory; provider ads allowed/preserved, no LORI ads; production AVPlay with approved immersive OK/Back semantics. Free-first hosting recommendation is conditional Actions/Pages versus Cloudflare Pages; no account, workflow, host, signing key or paid backend created. Named providers and actual target region are unresolved.
+
+Gate status READY_FOR_REVIEW for documentation. Phase00/01/01.5 accepted checkpoints stay closed; no playback/preview modifications or repeated device tests. Existing phase-session records below retain original historical statuses; current accepted-state summary above supersedes stale pending checkpoint wording. Git staging/commit/push and Phase02/03A implementation require separate approval.
 
 ## Gate report template
 - Phase / git branch / commit
