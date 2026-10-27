@@ -1,0 +1,60 @@
+{
+  "source": "FFmpeg testsrc2 generated moving test pattern plus public-domain R3 audio fixture",
+  "license": "Generated pattern: CC0-1.0 dedication; audio: PD-self, see LICENSE.txt",
+  "video": {
+    "codec": "H.264",
+    "profile": "Constrained Baseline",
+    "level": "3.0",
+    "width": 640,
+    "height": 360,
+    "fps": 24,
+    "pixelFormat": "yuv420p"
+  },
+  "audio": {
+    "codec": "AAC-LC",
+    "sampleRate": 44100,
+    "channels": 1
+  },
+  "durationSeconds": 12,
+  "hls": {
+    "container": "MPEG-TS",
+    "playlistType": "VOD",
+    "version": 6,
+    "segments": 4,
+    "segmentSeconds": 3,
+    "encryption": false,
+    "access": "Packaged relative local files; no server/network/auth. AVPlay receives absolute resolved local path. File-scheme playback is device-tested, not presumed."
+  },
+  "files": [
+    {
+      "path": "media/video-test.mp4",
+      "bytes": 789753,
+      "sha256": "c32fcd38d73e657a11c7192b3964633e8fe6ce1e1fc09aa00e176550544eaa75"
+    },
+    {
+      "path": "media/hls/playlist.m3u8",
+      "bytes": 269,
+      "sha256": "6831be71af57a6f833f7bf54237901d66fe95eb739f23652b7939d1993ad9156"
+    },
+    {
+      "path": "media/hls/segment-00.ts",
+      "bytes": 207176,
+      "sha256": "e44f5454cbd75e6521a4256fe67a15a8a086153b988b20ffc0b5203bf7291a47"
+    },
+    {
+      "path": "media/hls/segment-01.ts",
+      "bytes": 213192,
+      "sha256": "39984f176b9b24fec22a5bdfc6c3dd64d8c597f0cc3d7972b0e84bc75d5f513d"
+    },
+    {
+      "path": "media/hls/segment-02.ts",
+      "bytes": 214884,
+      "sha256": "5f98a11797afc3225b679862e7c67683a61953e806d72af31bed227947af98c7"
+    },
+    {
+      "path": "media/hls/segment-03.ts",
+      "bytes": 208680,
+      "sha256": "c810b63b519b056e03132662a953ba07124ad31352cbd98e65e55dba4820cfe2"
+    }
+  ]
+}

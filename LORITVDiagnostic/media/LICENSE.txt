@@ -1,0 +1,53 @@
+LORI TV R3 audio fixture provenance
+
+Source work: Media-440Hz.ogg, recorded/uploaded by Bre Dun (original upload log).
+Source page: https://commons.wikimedia.org/wiki/File:Media-440Hz.ogg
+Original file: https://upload.wikimedia.org/wikipedia/commons/f/f9/Media-440Hz.ogg
+Original SHA-1: 0e9d650281fbd29f64b081d4a3b221f5cbed2559
+License: public-domain dedication by the copyright holder (PD-self).
+The source page also grants use for any purpose without conditions where a
+public-domain dedication is not legally possible. This is not an assertion
+that every file on Wikimedia Commons has the same license.
+License verified: 2026-10-26.
+
+Packaged derivative: audio-test.mp3, repeated/truncated to approximately
+12 seconds, mono MPEG Layer III, 44100 Hz, 96 kbit/s. Created using existing
+FFmpeg; metadata removed. No other music or sound was added.
+Command: ffmpeg -stream_loop 2 -i ORIGINAL.ogg -t 12 -map 0:a:0 -ac 1
+  -ar 44100 -c:a libmp3lame -b:a 96k -map_metadata -1 audio-test.mp3
+Derivative SHA-256: 10c05e551d19fbe9242182f08124ec20713941c80f998436db4099fa1a96b4ae
+
+invalid-audio.mp3 is intentional plain text produced for this diagnostic,
+not third-party media. It is loaded only on explicit user request to test
+error capture and recovery. Neither fixture requires network access.
+
+R4 video fixture provenance (2026-10-26)
+video-test.mp4 is a 12-second moving diagnostic pattern generated locally
+using FFmpeg's testsrc2 filter; it contains no third-party movie footage,
+logos or imagery. To the extent copyright exists in this newly generated
+pattern/diagnostic composition, it is dedicated under CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+Its soundtrack is a transcode of the public-domain R3 fixture above.
+
+Verified streams: H.264 Constrained Baseline, Level 3.0, 640x360, 24 fps,
+yuv420p; AAC-LC mono 44100 Hz. Duration 12.0 seconds; MP4 size 789753 bytes.
+MP4 SHA-256: c32fcd38d73e657a11c7192b3964633e8fe6ce1e1fc09aa00e176550544eaa75
+Generation: testsrc2=size=640x360:rate=24 plus audio-test.mp3, -t 12,
+libx264 -profile:v baseline -level:v 3.0 -pix_fmt yuv420p -crf 28,
+-g 72 -keyint_min 72 -sc_threshold 0; AAC-LC 96k, 44100 Hz, mono;
+-map_metadata -1 -movflags +faststart. Existing FFmpeg used; no installation.
+
+media/hls/playlist.m3u8 is a local, unencrypted HLS VOD rendition remuxed
+from the same MP4. Four 3-second MPEG-TS segments, relative references,
+HLS version 6 with independent segments and ENDLIST. No server, external
+URL, credentials, cookies, DRM or network permissions are required.
+Remux: -c copy -bsf:v h264_mp4toannexb -hls_time 3
+-hls_playlist_type vod -hls_flags independent_segments.
+Both MP4 and complete HLS successfully decoded in local FFmpeg validation.
+Fixture codec details, access requirements and each file's SHA-256 are
+recorded in video-fixture.json. Local file-scheme support on Samsung is
+not presumed; native HTML5 HLS and AVPlay HLS must be tested separately.
+HTTP/live/adaptive-network HLS are not established by this local VOD test.
+
+invalid-video.mp4 is deliberate plain text generated for error testing,
+not third-party media. It is never automatically loaded or played.

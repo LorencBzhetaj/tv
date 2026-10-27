@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LORI TV · Audio R3</title>
+  <link rel="stylesheet" href="css/audio.css" />
+</head>
+<body>
+  <header><h1>LORI TV · Audio R3</h1><p>Local MP3 · no autoplay · choose Load, then Play. Back returns to R1.</p></header>
+  <audio id="audio" preload="none"></audio>
+  <main>
+    <section aria-label="Audio test controls">
+      <div id="audio-controls">
+        <button id="load" type="button">Load audio</button>
+        <button id="play" type="button">Play / resume</button>
+        <button id="pause" type="button">Pause</button>
+        <button id="mute" type="button">Mute / unmute</button>
+        <button id="quieter" type="button">Volume −</button>
+        <button id="louder" type="button">Volume +</button>
+        <button id="fail-load" type="button">Test failed load</button>
+        <button id="recover" type="button">Recover: load valid</button>
+        <button id="heard" type="button">I hear TV speakers</button>
+        <button id="not-heard" type="button">I do NOT hear sound</button>
+        <button id="stop" type="button">Stop / rewind</button>
+        <button id="return" type="button">Return to R1</button>
+      </div>
+      <p id="message" role="status">Press Load audio. No audio starts automatically.</p>
+      <pre id="metadata">Metadata: not loaded</pre>
+      <p class="note">Element volume is separate from Samsung system volume. Only you can confirm sound through TV speakers.</p>
+      <p class="note">Fixture: public-domain recording, Bre Dun / Wikimedia Commons; repeated and encoded as MP3. Source/license: media/LICENSE.txt.</p>
+    </section>
+    <section aria-label="Observations">
+      <h2>Session observations</h2>
+      <ul id="observations">
+        <li data-test="metadata">PENDING · Metadata</li>
+        <li data-test="play">PENDING · Play</li>
+        <li data-test="pause">PENDING · Pause</li>
+        <li data-test="resume">PENDING · Resume</li>
+        <li data-test="time">PENDING · Time advances</li>
+        <li data-test="mute">PENDING · Mute event/property</li>
+        <li data-test="unmute">PENDING · Unmute event/property</li>
+        <li data-test="volume">PENDING · Volume event/property</li>
+        <li data-test="error">PENDING · Expected load error</li>
+        <li data-test="recovery">PENDING · Playback after recovery</li>
+        <li data-test="navigation">PENDING · Remote navigation</li>
+        <li data-test="audible">PENDING · TV speakers: user confirmation</li>
+      </ul>
+      <p class="note">PASS indicates the described event/property only. Audible sound is never inferred.</p>
+    </section>
+  </main>
+  <h2>Event log · newest 24</h2>
+  <pre id="audio-log"></pre>
+  <script src="audio.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LORI TV · Video R4</title>
+  <link rel="stylesheet" href="css/video.css" />
+  <script src="$WEBAPIS/webapis/webapis.js"></script>
+</head>
+<body>
+  <header><h1>LORI TV · Video R4</h1><p>Choose a player/fixture to load, then Play. No autoplay. One active player.</p></header>
+  <main>
+    <section>
+      <div id="stage">
+        <video id="video" preload="none" playsinline></video>
+        <object id="av-surface" type="application/avplayer" hidden></object>
+      </div>
+      <div id="video-controls">
+        <button id="html-mp4" type="button">HTML5 MP4 load</button>
+        <button id="html-hls" type="button">HTML5 HLS load</button>
+        <button id="av-mp4" type="button">AVPlay MP4 load</button>
+        <button id="av-hls" type="button">AVPlay HLS load</button>
+        <button id="play" type="button">Play / resume</button>
+        <button id="pause" type="button">Pause</button>
+        <button id="seek-back" type="button">Seek −3 seconds</button>
+        <button id="seek-forward" type="button">Seek +3 seconds</button>
+        <button id="stop" type="button">Stop / close</button>
+        <button id="fullscreen" type="button">In-app fullscreen</button>
+        <button id="fail-load" type="button">Test failed load</button>
+        <button id="recover" type="button">Recover: load valid</button>
+        <button id="seen" type="button">I see moving video</button>
+        <button id="heard" type="button">I hear TV speakers</button>
+        <button id="not-av" type="button">Picture/sound issue</button>
+        <button id="return" type="button">Return to R1</button>
+        <button id="av-https-hls" type="button">AVPlay HTTPS HLS</button>
+      </div>
+      <p class="note">Generated moving pattern + public-domain audio. Local MP4/HLS fixtures plus an explicit Apple Bip Bop HTTPS test. No credentials. HLS file support is measured separately from HTTP streaming. media/LICENSE.txt contains provenance.</p>
+    </section>
+    <section>
+      <h2>Technical observations · not physical confirmation</h2>
+      <ul id="observations">
+        <li data-test="html-mp4">PENDING · HTML5 MP4</li>
+        <li data-test="html-hls">PENDING · HTML5 HLS</li>
+        <li data-test="av-mp4">PENDING · AVPlay MP4</li>
+        <li data-test="av-hls">PENDING · AVPlay HLS</li>
+        <li data-test="av-https-hls">PENDING · AVPlay HTTPS HLS</li>
+        <li data-test="availability">PENDING · AVPlay availability</li>
+        <li data-test="metadata">PENDING · Metadata / preparation</li>
+        <li data-test="controls">PENDING · Play / pause / resume</li>
+        <li data-test="seek">PENDING · Seek</li>
+        <li data-test="fullscreen">PENDING · In-app fullscreen</li>
+        <li data-test="buffer">PENDING · Buffer events</li>
+        <li data-test="error">PENDING · Expected load error</li>
+        <li data-test="recovery">PENDING · Recovery playback</li>
+        <li data-test="visible">PENDING · Moving video: user confirmation</li>
+        <li data-test="audible">PENDING · TV speakers: user confirmation</li>
+      </ul>
+      <pre id="av-diagnostic" role="status" aria-live="polite">AVPlay R5 · PENDING</pre>
+      <pre id="metadata">No player loaded</pre>
+    </section>
+  </main>
+  <p id="message" role="status">Select one load action. Loading never starts playback automatically.</p>
+  <pre id="video-log" aria-label="Newest 24 events"></pre>
+  <p id="fullscreen-hint" hidden>OK: pause/resume · Left/Right: seek · Back: leave fullscreen</p>
+  <script src="video.js"></script>
+</body>
+</html>

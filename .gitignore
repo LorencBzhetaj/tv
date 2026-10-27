@@ -26,6 +26,16 @@ secrets.json
 .tizen/
 *.wgt
 *.wgt.sig
+.tizen-rds/
+.sign/
+.settings/
+.buildResult/
+LORITVDiagnostic/Debug/
+LORITVDiagnostic/Release/
+LORITVDiagnostic/Build/
+LORITVDiagnostic/Test/
+*.code-workspace
+.vscode/
 
 # Local OS files
 Thumbs.db

@@ -2,11 +2,11 @@
   "version": "3.5",
   "package_version": "3.5",
   "edition": "Multi-Agent Ready — documentation corrections 2026-10-26",
-  "status": "planning_only",
+  "status": "phase00_accepted_checkpoint_ready_for_review_phase01_pending",
   "repository_url": "https://github.com/LorencBzhetaj/tv.git",
-  "development_started": false,
-  "generated_date": "2026-10-26",
-  "scope": "All working planning assets except PACKAGE_MANIFEST.json itself and .git metadata. Original input ZIP unchanged.",
+  "development_started": true,
+  "generated_date": "2026-10-27",
+  "scope": "Planning and branding assets only, excluding this manifest, .git metadata, application sources, generated output and ignored private machine configuration. Diagnostic source status is recorded in existing phase documents.",
   "files": [
     {
       "path": ".gitattributes",
@@ -15,13 +15,23 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 406,
-      "sha256": "5f6cbcffc80e8741e599d8349fde626b4fb4e915efefb63964cc415c9ebdf10b"
+      "bytes": 573,
+      "sha256": "30135bc990fc68bcab9fe1e9d29b2f8d6c3ee05d7293894e1729b2bac5d41549"
     },
     {
       "path": "AGENTS.md",
       "bytes": 3372,
       "sha256": "092fc1b6bb0ef59fc04c01c1667df38be1d82914482204fb7c7d69f7309d63e2"
+    },
+    {
+      "path": "assets/branding/lori-tv-icon-1024.png",
+      "bytes": 1388704,
+      "sha256": "2d7c95d10e5d7f4ea2172a49deb6769711a54fd96660aa4d00375a2a9b64303a"
+    },
+    {
+      "path": "assets/branding/lori-tv-icon-512.png",
+      "bytes": 376086,
+      "sha256": "8714ec1a7358244317d9f7e0254fe78652ce80a2f4c845433e14dfd073a45fe1"
     },
     {
       "path": "CLAUDE.md",
@@ -30,8 +40,8 @@
     },
     {
       "path": "docs/ACCEPTANCE_TESTS.md",
-      "bytes": 6811,
-      "sha256": "e912031daed4fef134167a63563b576971612739ea88c8ab69cc3311fe5d5c79"
+      "bytes": 13554,
+      "sha256": "0893ea8cc7de5082e910259f9b66020a314af6005e9522e36805a1174ee749db"
     },
     {
       "path": "docs/ARCHITECTURE_DECISIONS.md",
@@ -50,8 +60,8 @@
     },
     {
       "path": "docs/HANDOFF.md",
-      "bytes": 4103,
-      "sha256": "f6bead87665de2819a00987657cf5e0f9bb872bcffb23f45a319c747aa93af23"
+      "bytes": 37255,
+      "sha256": "172c8043b2c28f392215bbdc0a9c53dd7d9992dc3a578e8a6b5460fb708f9926"
     },
     {
       "path": "docs/HOW_TO_START_SQ.md",
@@ -80,13 +90,13 @@
     },
     {
       "path": "docs/PHASE_00_COMPATIBILITY_PLAN.md",
-      "bytes": 10645,
-      "sha256": "de6145728005d705615612d040fb3687e9bc1a9b2a869078587cda40ffd47090"
+      "bytes": 30165,
+      "sha256": "81c56f2645f49a65ee079096637cf6f4bdab9d2f044f9f03bfad5184ec3ccb58"
     },
     {
       "path": "docs/PHASE_TRACKER.md",
-      "bytes": 3694,
-      "sha256": "d23ffba553c6a7ed598f8ec2208885db75b0a66adbcfe7df0d0fc8aa4414194a"
+      "bytes": 31443,
+      "sha256": "a57eb7385d38a0c1743d18e76b93811673ecca0b719255b655563a83ab3ffde1"
     },
     {
       "path": "docs/ROADMAP.md",

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LORI TV Diagnostic</title>
+    <style>
+      body {
+        margin: 0;
+        background: #081425;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+      h1 {
+        font-size: 80px;
+        color: #48a9ff;
+      }
+      p {
+        font-size: 30px;
+      }
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main id="baseline">
+      <h1>LORI TV</h1>
+      <p>Samsung Tizen 10.0</p>
+      <p id="status">Checking JavaScript...</p>
+    </main>
+    <section id="remote-test" aria-labelledby="test-title">
+      <h2 id="test-title">Remote compatibility · R1</h2>
+      <p class="hint">Arrows move focus. OK activates. Back opens a safe exit prompt.</p>
+      <ul id="checklist" aria-label="Keys observed">
+        <li data-key="ArrowUp">Up: waiting</li>
+        <li data-key="ArrowDown">Down: waiting</li>
+        <li data-key="ArrowLeft">Left: waiting</li>
+        <li data-key="ArrowRight">Right: waiting</li>
+        <li data-key="Enter">OK: waiting</li>
+        <li data-key="Back">Back: waiting</li>
+      </ul>
+      <div id="focus-grid" aria-label="Nine navigation tiles">
+        <button type="button">Tile 1</button><button type="button">Tile 2</button><button type="button">Tile 3</button>
+        <button type="button">Tile 4</button><button type="button">Tile 5</button><button type="button">Tile 6</button>
+        <button type="button">Tile 7</button><button type="button">Tile 8 · Video R4</button><button type="button">Tile 9 · Audio R3</button>
+      </div>
+      <p id="selection" aria-live="polite">Starting remote test…</p>
+      <p id="lifecycle">Lifecycle: starting</p>
+      <p class="hint">Observed events are not a hardware PASS. User verification is required.</p>
+      <h3>Event log · latest 24 entries</h3>
+      <pre id="event-log" aria-label="Recent diagnostic events"></pre>
+    </section>
+    <div id="exit-overlay" hidden>
+      <section role="dialog" aria-modal="true" aria-labelledby="exit-title">
+        <h2 id="exit-title">Exit diagnostic?</h2>
+        <p>Cancel returns to your tile. Exit closes only this application.</p>
+        <button id="cancel-exit" type="button">Cancel</button>
+        <button id="confirm-exit" type="button">Exit application</button>
+        <p id="exit-error" role="status"></p>
+      </section>
+    </div>
+    <script>
+      document.getElementById("status").textContent =
+        "HTML, CSS & JavaScript: OK";
+    </script>
+    <script src="main.js"></script>
+    <script src="audio-entry.js"></script>
+    <script src="video-entry.js"></script>
+  </body>
+</html>
