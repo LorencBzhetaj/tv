@@ -2,7 +2,7 @@
   "version": "3.5",
   "package_version": "3.5",
   "edition": "Multi-Agent Ready — documentation corrections 2026-10-26",
-  "status": "phase00_accepted_checkpoint_ready_for_review_phase01_pending",
+  "status": "phase01_specification_finalized_closure_ready_for_review",
   "repository_url": "https://github.com/LorencBzhetaj/tv.git",
   "development_started": true,
   "generated_date": "2026-10-27",
@@ -40,8 +40,8 @@
     },
     {
       "path": "docs/ACCEPTANCE_TESTS.md",
-      "bytes": 13554,
-      "sha256": "0893ea8cc7de5082e910259f9b66020a314af6005e9522e36805a1174ee749db"
+      "bytes": 17795,
+      "sha256": "e0cd191f251aaf81981dcf42c93985664df456721c072292f4387e5130f052e4"
     },
     {
       "path": "docs/ARCHITECTURE_DECISIONS.md",
@@ -60,8 +60,8 @@
     },
     {
       "path": "docs/HANDOFF.md",
-      "bytes": 37255,
-      "sha256": "172c8043b2c28f392215bbdc0a9c53dd7d9992dc3a578e8a6b5460fb708f9926"
+      "bytes": 43579,
+      "sha256": "e1aef667799077f3061f3d65c5953ce3e7c82fc30766f31df291ab35db689f6c"
     },
     {
       "path": "docs/HOW_TO_START_SQ.md",
@@ -80,8 +80,8 @@
     },
     {
       "path": "docs/MOCKUP_INDEX.md",
-      "bytes": 2736,
-      "sha256": "0ecb2991ef8889dedc1fd0378554a039638d94b6927623c24ccfbe0c84206186"
+      "bytes": 6536,
+      "sha256": "994790b418f875e211f51793c1c497c35fcec35b7d93c0d170ddf2268f6039e4"
     },
     {
       "path": "docs/MULTI_AGENT_WORKFLOW.md",
@@ -95,13 +95,13 @@
     },
     {
       "path": "docs/PHASE_TRACKER.md",
-      "bytes": 31443,
-      "sha256": "a57eb7385d38a0c1743d18e76b93811673ecca0b719255b655563a83ab3ffde1"
+      "bytes": 34833,
+      "sha256": "f0840a4c8a366edadb7de60164cdeac442953d32ea8d547c93be7ceca27cd3ef"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 5661,
-      "sha256": "22c262da2db5abeb856bb17570ab7c77fb0034ac4fe03a14fcc42848ec3a17ac"
+      "bytes": 7392,
+      "sha256": "f6d654affd68fcc728f85a6a714818bebaf7f43bf259d8ee876a4406dbedc7ae"
     },
     {
       "path": "docs/TV_ENHANCEMENTS_SPEC.md",
@@ -110,8 +110,8 @@
     },
     {
       "path": "docs/UI_UX_SPEC.md",
-      "bytes": 7262,
-      "sha256": "a4537798a506cb44d0d1cf80700cec7d29584fa5432ac7863894212f95b388f8"
+      "bytes": 54356,
+      "sha256": "554bd96048abbf2fefbc52c487a96efbd7b954f983333fcfb5362ce7868d17ae"
     },
     {
       "path": "mockups/LORI_Cast_4_Screens.png",

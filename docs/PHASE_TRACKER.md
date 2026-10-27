@@ -1,11 +1,11 @@
 # LORI TV — Phase tracker
 
-**As of 2026-10-27: Phase 00 playback/navigation checkpoint COMPLETED with user acceptance; checkpoint documentation READY_FOR_REVIEW. R6 MP4 and R8 HTTPS HLS physical PASS. Local HLS non-blocking FAIL; intentional-error recovery deferred. Phase 01 PENDING, not authorized.**
+**As of 2026-10-27: Phase 00 playback/navigation checkpoint COMPLETED with user acceptance; checkpoint committed/pushed as 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2. R6 MP4 and R8 HTTPS HLS physical PASS. Local HLS non-blocking FAIL; intentional-error recovery deferred. Phase 01 specification finalized, closure READY_FOR_REVIEW; approved primary decisions recorded, Phase02 not authorized.**
 
 | Phase | Status | Evidence | Approved by user? |
 |---|---|---|---|
-| 00 Compatibility | COMPLETED (accepted playback/navigation scope) | R6 MP4 and controls PASS; R8 HTTPS HLS >30s + Stop PASS; remote PASS. Deferred gates listed below | Physical results accepted; checkpoint commit/push not approved |
-| 01 UI/UX implementation | PENDING | Conceptual PNGs only | No |
+| 00 Compatibility | COMPLETED (accepted playback/navigation scope) | R6 MP4 and controls PASS; R8 HTTPS HLS >30s + Stop PASS; remote PASS. Deferred gates listed below | Physical results and checkpoint commit/push approved; checkpoint published |
+| 01 UI/UX specification | READY_FOR_REVIEW (finalized closure baseline) | 37 concepts reviewed; final routes/focus/states/tokens; core decisions approved; later layouts explicitly deferred | Primary decisions Yes; closure checkpoint/Phase02 execution No |
 | 02 Tizen shell | PENDING | None | No |
 | 03 Live TV/EPG | PENDING | None | No |
 | 04 Movies/Series/Search | PENDING | None | No |
@@ -204,3 +204,21 @@ This entry supersedes earlier preparation/deployment/pending summaries for the t
 - Shared lifecycle: explicit selection/open, listener/display setup, prepareAsync, explicit Play, one active player, Stop/Close; bounded diagnostics. Existing HTML5 functionality preserved; no broader codec/DRM/live/ABR compatibility inferred from one fixed HLS rendition.
 - Remaining independent gates: detailed R3 audio subtests, HTML5 local HLS, full lifecycle/soak and error recovery, subtitles/track/quality selection, phone transport/casting, CH keys and conditional PiP remain unverified unless separately evidenced. They are not silently marked PASS. Phase 01 may specify conditional states; implementation promises remain gated.
 - Phase 00 playback/navigation checkpoint accepted; checkpoint documentation READY_FOR_REVIEW. Phase 01 NOT STARTED and requires separate approval. No code/UI changes, build/device tests, staging, commit or push in this closure session.
+
+
+## Phase 01 session — 2026-10-27 — READY_FOR_REVIEW (not completed)
+- User approved specification/planning only from committed checkpoint 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2; entry main clean, no pending code changes.
+- Reviewed existing instructions/architecture/ADRs/roadmap/handoff/acceptance/UI/Cast/enhancement specs, phase prompt and all 37 concept PNGs. No external provider/SDK/media investigations repeated.
+- Updated existing UI_UX_SPEC with screen/navigation inventory, per-screen Samsung remote focus maps, loading/empty/error/offline/player states, proposed design tokens/component inventory, companion workflows, approval register and proposed Phase02 sequence. Existing mockup index and acceptance evidence updated.
+- Findings: Favorites absent from sidebar concepts; preview/Back/background-player policy unresolved; Startup page concept conflicts with mandatory Home; Sports chip absent in result image; eight Manager content areas blank; missing enhancement/external-cast layouts. No architectural choice silently approved.
+- Blocking review choices: D01 Favorites, D02 preview, D03 player/Back, D04 visual tokens, D05 language, D12 shell identity/location/stack/focus approach. PIN/Cast/timer/retry/next-episode and Manager/external-media layout choices remain explicit later implementation gates.
+- Validation: document and asset-integrity checks only; no UI tests, physical-TV review, build/install/dependency changes or production shell. Diagnostic checkpoint remains unchanged. Phase01 T01-01 PARTIAL; user approval and missing visual detail required.
+- No staging/commit/push. Next: user reviews proposal/decisions; Phase02 requires separate authorization.
+
+
+## Phase 01 final closure — 2026-10-27
+- User final approval supersedes default/automatic mini-player ideas: no-overlay Player Back always Stop/Close -> origin -> restore focus/scroll. Active dialogs/keyboard consume Back first; hidden controls/fullscreen do not. Failure remains visible until safe release or explicit app exit. No default background playback.
+- Approved English default/Albanian extensibility, dedicated Favorites with Home/Live sections, explicit-selection Live preview, premium visual direction and production app separation. Concrete token baseline and centralized navigation/focus proposal documented.
+- Written specification COMPLETE for approved scope; closure READY_FOR_REVIEW. Deferred Manager/external-cast detail, PIN, Sleep Timer, optional mini-player/PiP, recovery/soak/unverified capabilities remain unimplemented and do not block initial shell unless a direct dependency emerges.
+- Phase02 proposed directory apps/tv and distinct app identity/stack/focus engine still require explicit approval; no directory/dependency/certificate created. Final T02 acceptance includes Player release failure and origin restoration.
+- Seven existing planning/manifest files updated; no diagnostic/mockup changes, runtime tests/build/signing/install, staging/commit/push or Phase00 retest. Final document/manifest integrity checks recorded in session output.

@@ -1,12 +1,12 @@
 # LORI TV — Execution Roadmap v3.5
 
-**Status: PLANNING COMPLETE, DEVELOPMENT NOT AUTHORIZED.** Do not create app source, install, deploy, buy services or contact providers until user explicitly authorizes the next phase. Each phase needs a human approval gate. Use `docs/PHASE_TRACKER.md` for evidence-based status.
+**Current authorization (2026-10-27): Phase 00 playback/navigation checkpoint accepted; Phase 01 primary UI/UX decisions approved and specification finalized for closure review; Phase02 not started.** Production implementation, dependencies, builds/deployments and Phase02 remain separately gated. Use PHASE_TRACKER.md for current evidence; earlier planning-only language describes the original package, not authorization to repeat bootstrap.
 
 | Phase | Goal | Deliverables | Exit gate |
 |---|---|---|---|
 | 00 | Samsung feasibility | model/firmware verification; signed test .wgt; AVPlay/HTML5 codec test; pairing transport spike; ADRs | Device evidence and risks approved |
 | 01 | UI/UX implementation spec | validate 35 individual mockups and two overview boards; complete focus maps; responsive states; accessibility; component map | User approves final UI and flows |
-| 02 | TV shell | Tizen React/TS setup, Home default, routing, focus engine, settings storage | Remote-only navigation on TV; package builds |
+| 02 | TV shell | Separate production directory/identity (approval required), tokens/components, Home + sidebar including Favorites, centralized focus/history/modals, fixtures, Stop/Close + Back boundary, settings | Approved architecture; focused shell acceptance; separately authorized physical-TV deployment |
 | 03 | Live TV + EPG | authorized channel catalog, safe M3U/XMLTV parsing, playback, guide, channel search | Channel switch, failures, timezones tested |
 | 04 | Movies/Series + Search | global/category search, detail screens, episodes, trailers/track support | Search scope, unavailable content, playback tested |
 | 05 | Profiles + Personalization | watchlist, progress, favorites, kids/PIN, profile switching | Isolation and PIN bypass tests pass |
@@ -48,3 +48,9 @@ v0.1 after phase 02; v0.5 after phase 05; v0.8 after phase 08; v1.0 after phase 
 
 ## v3.5 dependency clarification
 Sequence: 00 -> 01 -> 02 -> 03 -> 04 -> 05 -> 06 -> 07 -> 07B -> 08 -> 09 -> final acceptance. Earlier phases may define authorization/session interfaces and use fixtures, but may not claim profile/cast integration PASS before Phases 05/07B exist. Repeat cross-feature parental, timer and cast tests at the dependency gate and Phase 09. Gallery/Files/Video URL are required investigation/delivery paths subject to separate feasibility gates; BLOCKED requires explicit scope disposition before full 07B acceptance.
+
+
+## Phase01 closure and Phase02 entry — 2026-10-27
+Final approved Player rule: Stop/Close + Back returns to origin with focus/scroll restoration; interactive overlays dismiss first, but passive controls/fullscreen never add a Back step. No automatic mini-player or default background playback. English default, Albanian additional, dedicated Favorites route with Home/Live sections and explicit-selection-only Live preview approved.
+Phase02 proposed order: directory/identity/configuration approval -> tokens/shared components -> Home/sidebar -> centralized focus/history/modal handling -> fixture skeletons -> player Stop/Close barrier -> settings/capabilities -> focused validation and separately approved device cycle. Candidate React/TS/Vite and ADR-007 focus implementation remain proposals.
+User defers detailed Manager layouts, external casting implementation, PIN enforcement, Sleep Timer, advanced recovery/performance/stability and unverified hardware to their owning phases. Optional mini-player/PiP/background playback is future work only and excluded from initial Phase02; this supersedes earlier enhancement scheduling if it implies default availability. Missing later-phase art is not a shell blocker absent a demonstrated direct dependency. Existing future product requirements/feasibility gates remain, not silently deleted. No Phase02 execution authorized in this closure task.

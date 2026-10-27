@@ -119,3 +119,33 @@ This entry supersedes earlier preparation/deployment/pending summaries for the t
 - Phase 00 playback/navigation checkpoint accepted; checkpoint documentation READY_FOR_REVIEW. Phase 01 NOT STARTED and requires separate approval. No code/UI changes, build/device tests, staging, commit or push in this closure session.
 
 Acceptance interpretation: T00-03 is PARTIAL across its full original scope: tested MP4/HLS playback PASS; subtitle/audio-track/quality controls are not accepted by this checkpoint. T00-04 phone pairing transport remains NOT RUN. T00-V05 PASS for tested R6 interactions; T00-V06 FAIL/non-blocking; T00-V07 PARTIAL (buffer/error observed, recovery pending); T00-V08 not globally accepted by this limited checkpoint. R8 picture/audio acceptance does not close independent R3 audio subtests.
+
+
+## Phase 01 specification acceptance — 2026-10-27
+Historical draft gate: T01-01 was PARTIAL / READY_FOR_REVIEW. The final disposition below supersedes pending primary-decision statements. All 35 individual concepts + 2 boards reviewed; screen graph, per-screen focus/remote maps, shared state matrix, component/token gaps and approval register are in UI_UX_SPEC.md. No UI implemented, no device/readability/phone layout tests run.
+
+- [x] Existing PNG inventory visually reviewed; Manager blanks and missing concepts explicitly reported.
+- [x] Written route/focus/return maps for 18 existing TV views plus required missing overlays/collections.
+- [x] Loading/empty/error/offline/rights/PIN/playback state behavior and companion workflow draft.
+- [ ] User approves P01-D01..D05 and D12 before production-shell decisions.
+- [ ] Missing detailed layouts/states reviewed and approved, including Manager and external casting.
+- [ ] User approves final focus/Back/player flows; ADR-007 implementation remains undecided.
+- [ ] Later authorized TV/phone rendering verifies readability, contrast, safe area and remote behavior; no physical PASS inferred from PNG review.
+
+Review scenarios proposed for later implementation: cold Home without autoplay/profile interception; sidebar to every route and back to exact anchor; grid edges/empty rows/removed item; query scope and stale response; modal focus/Cancel; locked/no-source action; unsupported track choices; single-player exit; settings destructive Cancel; pairing expiry and deny; no-PC/transport conditional labels. MP4/HLS/device setup is not rerun as part of this specification session.
+
+
+## Phase 01 final specification closure — 2026-10-27
+Specification work COMPLETE for the approved initial-shell scope; closure artifact READY_FOR_REVIEW, not authorization to start Phase02. Core UI decisions accepted by user: English default + Albanian/additional locale architecture; dedicated Favorites and Home/Live sections; explicit-selection Live preview only; premium token baseline; separate production app; final Stop/Close + Back. Written focus/state/token/acceptance maps finalized. No production components or physical readability tests implemented.
+
+T01-01 disposition: 35 individual mockups + 2 boards REVIEWED; primary behaviors APPROVED; written closure baseline FINALIZED. Missing later-surface layouts explicitly DEFERRED by user, not Phase02 blockers without a direct dependency. Final closure/checkpoint approval remains pending. Do not report all future visual layouts or device acceptance as PASS.
+
+Future shell checks T02-04..07 supplement T02-01..03:
+- Player no-overlay Back (controls shown/hidden, fullscreen/normal) requests Stop then Close/release before returning to exact origin/item/scroll; no auto-mini-player/background playback. Overlay Back closes topmost input/menu only; next Back exits Player.
+- Duplicate Back during preparation/closing yields one pending exit. Stop/Close failure retains visible error/focus/origin and offers explicit Retry release/Exit; never navigates behind possibly active playback. VOD progress snapshot/save where supported; Live has no VOD resume offset.
+- Favorites membership per profile consistent across Home/Live/Favorites; add preserves invoker, remove moves to next/previous/empty Browse, save failure reverts state without focus loss.
+- Focus movement over Live channels never starts AVPlay; explicit selection may start one supported preview; route departure releases it; fixture shells do not claim actual live-source support.
+- English initial UI and selectable Albanian via locale resource keys, route/focus preserved during language change; no localization engine created in Phase01.
+- Separate production directory/IDs; existing diagnostic source, R8 identity and rollback packages remain unchanged. No hidden real PIN/pairing/provider promises in fixtures.
+
+Deferred gates remain: Phase05 PIN enforcement; Phase07/07B pairing/external Cast; Phase08 Manager detail; Phase06 Sleep Timer/advanced player behavior; Phase03/06 recovery and Phase09 performance/stability. Mini-player/PiP/background playback are optional future, capability-gated and excluded from initial shell. No previous Phase00 acceptance test is rerun.

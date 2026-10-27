@@ -3,17 +3,17 @@
 **Project:** LORI TV (Samsung Tizen + Remote PWA + Manager)  
 **Canonical remote:** https://github.com/LorencBzhetaj/tv.git  
 **Package:** v3.5 baseline; **development:** Phase 00 diagnostic only  
-**Current agent:** Codex (Phase 00 accepted checkpoint and handoff)  
+**Current agent:** Codex (Phase 01 specification closure)  
 **Next agent:** Codex or Claude after user review; inspect current files first  
-**Current phase:** Phase 00 playback/navigation checkpoint COMPLETED; documentation READY_FOR_REVIEW; Phase 01 PENDING.  
-**Approved scope:** closure documentation and Git checkpoint inventory only. No playback/UI changes, build/deployment, commit/push or Phase 01 execution.
+**Current phase:** Phase 01 approved-scope specification finalized; closure READY_FOR_REVIEW. Phase02 proposals await approval; diagnostic checkpoint preserved.  
+**Approved scope:** Phase 01 documentation/specification only; no production UI, diagnostic changes, builds, device actions, dependencies, commit or push.
 
 ## Repository state (fill in when working in local repo)
 - Local path: C:/Users/Public/tv
 - Branch: main (tracks origin/main)
-- HEAD commit: f817880965423b17039fd75a59b5423b53a0d6c6
+- HEAD commit: 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2 (Phase00 checkpoint; verified at Phase01 entry)
 - Remote status: canonical origin; baseline pushed and remote hash verified in prior Git session
-- Working tree clean?: Clean at Step A entry; documentation/manifest updates now uncommitted
+- Working tree clean?: Clean at Phase01 entry; current planning-document/manifest edits uncommitted
 
 ## Completed with evidence
 - Planning package and conceptual mockups prepared; no runtime implementation.
@@ -255,3 +255,28 @@ Proposed commit: docs: record Phase 00 acceptance and diagnostic checkpoint
 No automatic commit/push. At approval, stage the explicit allowlist only, inspect staged diff/secrets and validate manifest; do not use git add . indiscriminately. WGTs remain local; hashes and provenance provide traceability.
 
 Phase 01 starting point: prompts/02_PHASE_01_UI_UX.md — UI/UX specification, not production shell implementation. Review 35 individual mockups and 2 boards; define flows/component inventory/D-pad focus maps; loading/empty/error/offline states; phone/manager flows; missing Cast/enhancement states and conditional PiP. Preserve diagnostic checkpoint as device evidence. Phase 02 owns the production Tizen shell. Obtain explicit Phase 01 approval first.
+
+
+## Phase 01 handoff — 2026-10-27
+- Base main / 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2; user authorized planning only. Phase00 physical MP4/HTTPS-HLS/navigation acceptance and R8 hash remain unchanged; local HLS nonblocking FAIL and error recovery deferred. No tests repeated.
+- Read canonical planning/docs/prompt and visually reviewed all 35 individual PNGs + 2 boards. Temporary contact sheets under ignored private/ are review aids only, not new mockups or checkpoint candidates.
+- Main deliverable: UI_UX_SPEC.md Phase01 review draft contains route graph and focus/OK/Back maps for all 18 TV references plus Favorites, editors, programme/event panels, timer/zapping/health/conditional mini-player, shared states, design-system proposals, Remote and Manager workflow inventory and P01-D01..D12 approval register.
+- Mockup discrepancies surfaced, not silently resolved: Favorites placement; Live preview activation; Player sidebar/background/back behavior; Startup page must remain Home; result chips missing Sports; consent card vs pre-play approval; blank Manager content and missing Categories/login; undrawn external Cast/enhancement states.
+- No ADR engine/backend/provider/security decision approved by this draft. ADR-007 remains pending library/custom evaluation in authorized Phase02; ADR-003/C03 transport/PiP gates remain open. P01-D12 must settle shell location/identity and framework candidate without overwriting diagnostic app.
+- Next user review priorities: D01 Favorites filter/section versus dedicated route; D02 static preview versus explicit Preview; D03 stop-and-return player exit and controls timeout; D04 tokens/safe area/type/focus; D05 EN/SQ initial language; D12 shell/focus approach. Later PIN/next-episode/Cast/timer/retry/layout choices need approval before their implementations.
+- Proposed Phase02 sequence: approve shell-blocking design -> approve isolated shell identity/location/stack -> tokens/AppFrame/Home/sidebar -> deterministic focus/history/modals -> fixture-based route skeletons -> settings/capability boundaries -> separately authorized validations/device cycle. No live providers, phone transport or complete player introduced by this planning approval.
+- T01-01 is PARTIAL. Written proposal READY_FOR_REVIEW is not Phase01 COMPLETED; missing detailed visuals, user decisions and later device readability remain pending. No source PNG or application code changes, no install/build/deploy/dependencies, no commit/push.
+- Files modified: docs/UI_UX_SPEC.md, docs/MOCKUP_INDEX.md, docs/ACCEPTANCE_TESTS.md, docs/PHASE_TRACKER.md, docs/HANDOFF.md, docs/ROADMAP.md, PACKAGE_MANIFEST.json. Manifest refreshed for document integrity only; scope unchanged.
+
+
+## FINAL Phase01 closure handoff — 2026-10-27 (supersedes draft open primary decisions)
+- User request read from attached Pasted text.txt; explicit documentation-only final UI/UX approval, not code/dependency/device/Git authorization. Base main / 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2; seven pre-existing planning edits preserved and finalized.
+- Final decisions: English default, Albanian selectable, future resource-key localization; Favorites dedicated sidebar route + Home/Live collections; explicit OK selection only may preview supported Live source; premium navy/blue/rounded readable tokens; separate production shell from LORITVDiagnostic.
+- FINAL Player Back: dismiss topmost keyboard/dialog/menu first; with no interactive overlay Stop/Close/release then origin/focus/scroll immediately, even fullscreen or hidden-controls. No automatic mini-player, no default background playback. Release failure stays in visible Player error with saved origin and explicit Retry/Exit, never silently navigates while audio may continue. VOD progress snapshot where supported, no Live VOD offset. Same barrier for in-app Home/sidebar route transitions.
+- UI_UX_SPEC contains full screen/graph/initial/directional/OK/Back maps, removal/scroll restoration, Favorites shared state, player close transaction, concrete token table (1600x900 baseline,48 safe margin,body22/control24/title48,poster176x264,landscape320x180,3px focus ring/4px offset,140ms motion), accessibility targets and Phase02 acceptance. Token values are specification, not measured TV readability.
+- Production proposal ONLY: apps/tv/, display LORI TV, widget URI urn:lori-tv:production; new distinct SDK package/app IDs to propose at Phase02 setup. React/TS/Vite candidate and centralized custom/minimal-library focus decision pending ADR-007 review. No production files, IDs, dependencies or certificates allocated now.
+- Proposed sequence: production directory/identity/config -> tokens/components -> Home/sidebar -> central focus/history/modals -> fixture skeletons -> Stop/Close player interface -> settings/capability boundaries -> focused validations, separate physical-TV approval. Do not reuse diagnostic app identity or treat R8 network whitelist as a production provider policy.
+- Deferred per user: optional mini-player/PiP/background playback; Manager detailed layouts/implementation Phase08; external casting Phase07B; PIN Phase05; Sleep Timer Phase06; advanced recovery/stability Phase03/06/09; unverified platform features. These do not block initial shell unless a direct dependency is demonstrated. Missing mockups remain missing, not fabricated or accepted as implemented.
+- Phase01 specification work finalized; closure artifact READY_FOR_REVIEW. Final checkpoint approval needed before Git operations; Phase02 execution separately approved. T01-01 review covers37 existing PNGs; final written behavior is specified, later device/companion layout acceptance deferred honestly.
+- Exact proposed checkpoint allowlist: docs/UI_UX_SPEC.md, docs/MOCKUP_INDEX.md, docs/ACCEPTANCE_TESTS.md, docs/PHASE_TRACKER.md, docs/HANDOFF.md, docs/ROADMAP.md, PACKAGE_MANIFEST.json. Proposed commit: docs: finalize Phase 01 UI UX specification and shell handoff. No staging/commit/push performed.
+- No production/diagnostic/playback/UI/mockup edits or build/install/deploy/Phase00 tests. Original source-of-truth documents retained; this explicit user approval supersedes prior draft mini-player/default Back alternatives without changing future feasibility gates.
