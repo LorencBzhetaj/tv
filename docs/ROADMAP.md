@@ -1,6 +1,6 @@
 # LORI TV — Execution Roadmap v3.5
 
-**Current authorization (2026-10-29): Phase00/01/01.5 and FREE-FIRST architecture documentation accepted; approved baseline 2e98a3c450bddc0c1ae490f4c5c3fdc657debe4f. M1 accepted; final validation and its Git checkpoint/push ONLY are authorized.** Java compilation fixed; M1 PASS / COMPLETED: encoded reference resolution, both cryptographic signatures/all digests, reproducible runtime build and 8/8 regression tests PASS; user checkpoint approved; see HANDOFF. M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED. No TV contact/deployment, hosting/workflows or M2 execution authorized. Earlier session records are historical.
+**Current authorization (2026-10-29): M1 published e22400d926d015061ea1805bed293925930e4691; M2 visual approval received and final local frame/design/localization validation PASS, M2 COMPLETED/uncommitted. Current task authorizes M2 finalization and M3 planning only.** No M3 implementation, TV actions, signing, Content Engine, hosting, commit or push. M3–M6 NOT STARTED; historical milestone records below do not grant new execution authority.
 
 | Phase | Goal | Deliverables | Exit gate |
 |---|---|---|---|
@@ -61,3 +61,12 @@ User defers detailed Manager layouts, external casting implementation, PIN enfor
 ADR-004/005/008 policy and [ARCHITECTURE.md section 13](ARCHITECTURE.md#13-free-first-content-engine-contract--2026-10-28) govern the new requirements. Phase03A implements provider registry/ingestion, source/territory/expiry eligibility, EPG normalization and bounded scheduled artifact publication before Live integration. Initial MVP has no mandatory paid infrastructure/PC/manual playlist. Hosting selection, named provider/publication permissions and source format/device evidence are gates, not assumptions. Public static data only; no secrets, provider tokens, paid failover or app backend by default.
 
 Dependency order: approved production shell/abstract fixtures (02) -> publisher/schema/allowlist/cache tests (03A) -> separately approved real Live provider/native playback tests (03) -> authorized VOD and linked metadata (04) -> advanced sports/reliability (06). Full Manager (08) is not a dependency for automatic catalog updates. No media integration or infrastructure creation is approved by this documentation checkpoint. New measurable tests CE-01..CE-16 are in ACCEPTANCE_TESTS.md; existing T03/T04/T06/T08 semantics remain.
+
+
+## Phase02 M3 proposed next milestone — approval required
+
+M2 closed with18 tests/22 security assertions and12 browser footer/view/locale cases PASS; no footer overlap bug or runtime correction. Detailed M3 input/focus/history architecture, seven proposed new files, exact modification scope, test matrix and risks are in HANDOFF. ACCEPTANCE_TESTS T02-M3-01..12 all PENDING.
+
+Sequence after approval: typed remote actions/repeat guard -> optional Tizen key adapter -> explicit region/node focus graph and modal scopes -> bounded origin/focus/scroll history -> integrate existing Home/frame/preferences -> PC browser and regression checks. Optional Menu/media/colors require actual supported-key intersection and proposed tv.inputdevice privilege; OS Home/volume/power remain owned by Samsung. Native-select versus app-owned option-dialog decision and ADR-007 implementation choice need review. Synthetic nested screens test the stack only, no catalog/profile/Favorites/player implementation.
+
+First obtain separate M2 checkpoint approval if desired, then explicit M3 source/config approval. Physical Samsung validation/deployment is a later separate gate; prior diagnostic key/playback results do not certify production focus. No M3–M6 auto-start; no providers, paid infrastructure, Content Engine or AVPlay scope.

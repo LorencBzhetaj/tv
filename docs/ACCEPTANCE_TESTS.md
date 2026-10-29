@@ -183,3 +183,49 @@ Future shell checks T02-04..07 supplement T02-01..03:
 - Separate production directory/IDs; existing diagnostic source, R8 identity and rollback packages remain unchanged. No hidden real PIN/pairing/provider promises in fixtures.
 
 Deferred gates remain: Phase05 PIN enforcement; Phase07/07B pairing/external Cast; Phase08 Manager detail; Phase06 Sleep Timer/advanced player behavior; Phase03/06 recovery and Phase09 performance/stability. Mini-player/PiP/background playback are optional future, capability-gated and excluded from initial shell. No previous Phase00 acceptance test is rerun.
+
+
+## Phase02 M2 local acceptance evidence — 2026-10-29
+
+These scoped local checks do not mark broader Phase02 navigation/player or real-TV tests PASS. User visual approval remains PENDING; M2 READY_FOR_REVIEW.
+
+| ID | M2 criterion | Evidence / result |
+|---|---|---|
+| T02-M2-01 | Full default, Home startup, Standard selectable | Node state tests and PC browser PASS |
+| T02-M2-02 | Modal Menu, background inert, close/Back restore | Node + browser arrows/Tab/Escape and invoker/scroll PASS; temporary PC adapter only |
+| T02-M2-03 | View preference persists; F excludes editing/dialog | Node + browser reload/F checks PASS |
+| T02-M2-04 | EN default, SQ selectable, complete key parity | Node + PC EN/SQ/reload PASS; no English explanatory copy in SQ runtime |
+| T02-M2-05 | Missing-key fallback and corrupt/blocked storage | Node negative tests PASS; localized session-only warning |
+| T02-M2-06 | Actual viewport reflow and safe-area constraints | Node metrics PASS; browser1280x720/1600x900/1920x1080 and390x844 checked, no horizontal overflow in checked layouts; physical overscan PENDING |
+| T02-M2-07 | Focus visible, selection distinct, reduced motion | CSS/token checks and PC focus PASS; primary-white contrast4.50:1; real-TV readability PENDING |
+| T02-M2-08 | No injected HTML, media/network integration or external dependencies | Source/resource inspection PASS; no new runtime or dev dependencies |
+| T02-M2-09 | M1 identity/icon/config and strict stage verification preserved |18 tests incl22 Java security assertions,typecheck/build,SDK schema/inventory/source checks PASS; no new signed M2 package |
+| T02-M2-10 | Isolated PC preview, preserved prototype/diagnostic | Loopback4174 explicit files,6 forbidden paths404; protected Git paths unchanged PASS; user visual approval PENDING |
+
+M1 signed fixture remains ignored at apps/tv/Build/m1-reference/package.wgt with SHA-2568382afd1b3266330ee6fbe45723fea574e71dc5600a521075abe78d18f63b2ee. Its historical signature verification does not certify M2 staging. No TV installation/launch, no M3–M6, no Content Engine.
+
+
+## M2 final closure evidence — 2026-10-29
+
+User visual approval received. M2 local frame/design/localization scope COMPLETED after final gates:18/18 Node tests,22/22 Java security assertions,typecheck/static build/SDK XML schema/stage inventory PASS. All76 manifest entries refreshed/validated; no sensitive files or protected-path changes. Older M2 READY_FOR_REVIEW entries above are historical. No new signed WGT or physical-TV acceptance.
+
+Footer review: main bottom equals footer top (separate Grid rows); initial partially visible controls are below the scroll fold.12 browser cases (Full/Standard,EN/SQ,1280x720/1920x1080/425x612) reach View and Language using arrow-to-settings,Enter,Tab; native select arrows keep their native selection behavior. Focused last control + outline remains above footer, minimum28.17px clearance, no horizontal overflow.6 Full Menu/Escape focus+exact-scroll restoration cases PASS. Language/view persist across reload; safe fallback/storage failure in automated tests PASS; console errors/warnings observed0. No app/CSS changes needed. Physical arrow-only native select/remote/overscan acceptance remains PENDING for M3/device validation.
+
+## Proposed M3 acceptance matrix — NOT RUN
+
+| ID | Proposed acceptance criterion | Evidence required / status |
+|---|---|---|
+| T02-M3-01 | All4 directions + region boundaries deterministic, no geometric search | Unit graph edge cases + PC browser; PENDING |
+| T02-M3-02 | OK/Back/Menu mapped once; native clicks not doubled | Mandatory PC/TV code unit cases + browser; PENDING |
+| T02-M3-03 | Optional keys capability-gated, mandatory navigation survives registration failures | API absent/throws/partial support + exact privilege/schema tests; PENDING |
+| T02-M3-04 | Initial/return focus and missing/disabled/hidden/inert fallback eligible | Unit DOM fixtures + browser disappearance; PENDING |
+| T02-M3-05 | Topmost modal traps focus and Back restores invoker/scroll | Nested scope tests + keyboard-only browser; PENDING |
+| T02-M3-06 | Full/Standard and EN/SQ retain correct anchors and ring visibility | View/locale transitions + browser bounds including footer; PENDING |
+| T02-M3-07 | Nested history pop restores exact origin, root exit Cancel default |3-level synthetic fixtures, explicit exit mock once; PENDING |
+| T02-M3-08 | Held/repeated OK/Back cannot cascade; directions throttled | Injected fake-clock/reentrancy/key-up-loss tests; PENDING |
+| T02-M3-09 | Bounded memory/listeners and no invisible focus over long sequences |1000 seeded actions + mount/dispose invariant checks; PENDING |
+| T02-M3-10 | Existing M1/M2/security gates remain strict | Typecheck/build/all tests/schema/inventory/manifest/privacy; PENDING |
+| T02-M3-11 | PC arrows/OK/Back without mouse, no overflow/errors | Browser matrix2 modes×2 locales with nested test fixture; PENDING |
+| T02-M3-12 | Actual Samsung remote capability/overscan/readability evidence | Separately approved controlled deployment + user physical tests; PENDING |
+
+No M3 test or implementation is claimed PASS. Media actions have no playback consumer in M3; no AVPlay/catalog/provider scope. See HANDOFF for exact proposed files, Samsung documentation, approval decisions and permission gate.

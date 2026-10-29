@@ -1,13 +1,13 @@
 # LORI TV — Phase tracker
 
-**As of 2026-10-29: Phase00, Phase01, Phase01.5 and FREE-FIRST architecture accepted at approved baseline 2e98a3c450bddc0c1ae490f4c5c3fdc657debe4f. Phase02 M1 PASS / COMPLETED with user checkpoint approval and successful final verification. M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED. Historical session entries below retain their original evidence/status.**
+**As of 2026-10-29: M1 published e22400d926d015061ea1805bed293925930e4691. M2 visual approval received and all final local gates PASS: M2 COMPLETED for frame/design/localization only, uncommitted. M3 architecture/testing plan prepared for review; M3–M6 NOT STARTED. Content Engine NOT IMPLEMENTED. Physical Samsung requirements remain PENDING. Older records are historical.**
 
 | Phase | Status | Evidence | Approved by user? |
 |---|---|---|---|
 | 00 Compatibility | COMPLETED (accepted playback/navigation scope) | R6 MP4 and controls PASS; R8 HTTPS HLS >30s + Stop PASS; remote PASS. Deferred gates listed below | Physical results and checkpoint commit/push approved; checkpoint published |
 | 01 UI/UX specification | COMPLETED (accepted scope) | Approved checkpoint f174f9ec1c406aea834f18352bf23b160c782d92; later deferred layouts preserved | Yes; not Phase02 execution approval |
 | 01.5 Interactive design preview | COMPLETED (accepted/published) | Checkpoint 170540900012a0bf67a1aa5e1a7d1c4dad125d46; Full View/direct immersive OK/Back restoration; simulated only | Yes; no production/native evidence inferred |
-| 02 Tizen shell | M1 PASS / COMPLETED; M2–M6 NOT STARTED | Both RSA-SHA512 signatures and 13 reference digests PASS; certificate continuity/dates, package/schema PASS; 8/8 tests including 22 security assertions | M1 checkpoint approved after final checks PASS; no TV action or M2 approval |
+| 02 Tizen shell | M1 COMPLETED/published; M2 COMPLETED/local scope; M3–M6 NOT STARTED | M2 final18 tests/22 security assertions,12 browser footer/view/locale cases,build/schema/inventory PASS | User visual approval and finalization received; no Git/M3/TV approval |
 | 03 Live TV/EPG | PENDING | None | No |
 | 03A Content Engine foundation (within 03) | PENDING implementation; architecture checkpoint READY_FOR_REVIEW | Free-first/product policy approved; ADR-004/005/008 and CE-01..16 specified, not executed | Documentation only; no workflow/hosting/code approval |
 | 04 Movies/Series/Search | PENDING | None | No |
@@ -19,7 +19,15 @@
 
 Statuses: PENDING → IN_PROGRESS → BLOCKED / READY_FOR_REVIEW → COMPLETED. Never set COMPLETED without command output or physical-device evidence and explicit user acceptance.
 
-## Current M1 accepted checkpoint gate — 2026-10-29
+## Current M2 closure / M3 planning gate — 2026-10-29
+
+User visual approval accepted. Final18 Node tests and22 Java security assertions PASS; strict typecheck, unchanged-runtime rebuild, SDK XML/schema/stage inventory PASS. Footer/main share a boundary without overlap:12 browser cases (2 modes×2 locales×3 viewports), focus outline clearance minimum28.17px,6 Menu/Escape restores PASS;0 console errors/warnings. No application correction needed. EN/SQ and view reload persistence plus storage fallback PASS. M2 COMPLETED for approved local scope; physical TV PENDING. M1 WGT hash preserved; no signed M2 package/deploy. Detailed proposed M3 input/focus/history plan and file scope in HANDOFF; no M3 source created. M3–M6 NOT STARTED, Content Engine NOT IMPLEMENTED. Current task documentation only; no commit/push.
+
+## Historical M2 frame/design/localization gate — 2026-10-29
+
+Home-only responsive frame, approved tokens/branding, Full default/Standard preference, modal Menu, complete EN/SQ resources and guarded local preferences implemented. Temporary PC DOM-order keyboard behavior isolated; final remote focus is M3. T02-M2-01..10 local evidence recorded in ACCEPTANCE_TESTS; 18 tests including existing22 Java security assertions, strict typecheck/static build, runtime inventory and SDK schema PASS. Browser view/language persistence, overlay input/restore and viewport checks PASS; user visual acceptance PENDING. M2 unsigned staging only; preserved M1 signed fixture hash unchanged. No TV/AVPlay/routes/catalog, no dependency installation, no commit/push. M2 READY_FOR_REVIEW, M3–M6 NOT STARTED, Content Engine NOT IMPLEMENTED.
+
+## Historical M1 accepted checkpoint gate — 2026-10-29
 
 User explicitly approved M1 Git checkpoint. Final typecheck/static build, all 8 tests/22 security assertions, runtime reproducibility, SDK schema/config/inventory, both cryptographic signatures/all 13 reference digests and certificate continuity/dates PASS. Original WGT hash unchanged; no resigning or TV work. M1 PASS / COMPLETED (identity/toolchain only); checkpoint commit/push authorized. No full PKI chain/revocation claim. Manifest and privacy/scope checks required before staging; exact outcome returned in final report. M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED.
 
