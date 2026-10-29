@@ -1,0 +1,5 @@
+:root { color-scheme: dark; font-family: Arial, Helvetica, sans-serif; color: #f1f6ff; background: #07101e; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
+main { box-sizing: border-box; padding: 48px; max-width: 100%; text-align: center; }
+h1 { color: #48a9ff; font-size: 48px; line-height: 1.2; }
+p, noscript { font-size: 22px; line-height: 1.5; overflow-wrap: anywhere; }

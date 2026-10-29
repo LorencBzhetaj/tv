@@ -1,0 +1,19 @@
+{
+  "name": "lori-tv-production",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.11.1 <25" },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "verify:stage": "node scripts/verify.mjs stage",
+    "package": "node scripts/package.mjs",
+    "verify:package": "node scripts/verify.mjs package"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2"
+  }
+}

@@ -40,3 +40,7 @@ LORITVDiagnostic/Test/
 # Local OS files
 Thumbs.db
 .DS_Store
+
+# Phase 02 production toolchain and generated staging/packages
+apps/tv/node_modules/
+apps/tv/Build/

@@ -1,6 +1,6 @@
 # LORI TV — Execution Roadmap v3.5
 
-**Current authorization (2026-10-28): Phase 00 accepted; Phase 01 committed at f174f9ec1c406aea834f18352bf23b160c782d92; Phase 01.5 approved/committed/pushed at 170540900012a0bf67a1aa5e1a7d1c4dad125d46. Free-first Content Engine documentation only is authorized; Phase02 has NOT started.** No implementation, dependencies, hosting resources, workflows, builds/deployments, staging/commit/push authorized in this task. Earlier session records are historical; no bootstrap or hardware retest implied.
+**Current authorization (2026-10-29): Phase00/01/01.5 and FREE-FIRST architecture documentation accepted; approved baseline 2e98a3c450bddc0c1ae490f4c5c3fdc657debe4f. M1 accepted; final validation and its Git checkpoint/push ONLY are authorized.** Java compilation fixed; M1 PASS / COMPLETED: encoded reference resolution, both cryptographic signatures/all digests, reproducible runtime build and 8/8 regression tests PASS; user checkpoint approved; see HANDOFF. M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED. No TV contact/deployment, hosting/workflows or M2 execution authorized. Earlier session records are historical.
 
 | Phase | Goal | Deliverables | Exit gate |
 |---|---|---|---|

@@ -1,13 +1,13 @@
 # LORI TV — Phase tracker
 
-**As of 2026-10-28: Phase00 accepted playback/navigation checkpoint 1a2a71ff2982cd7b4a35f43e6efc13535d5e0de2; R6 MP4/R8 HTTPS HLS physical PASS, local HLS non-blocking FAIL and intentional-error recovery deferred. Phase01 completed/committed f174f9ec1c406aea834f18352bf23b160c782d92; Phase01.5 approved/committed/pushed 170540900012a0bf67a1aa5e1a7d1c4dad125d46. Free-first Content Engine product rules approved; documentation checkpoint READY_FOR_REVIEW. Phase02 and Content Engine implementation NOT started. Historical session entries below retain their original evidence/status.**
+**As of 2026-10-29: Phase00, Phase01, Phase01.5 and FREE-FIRST architecture accepted at approved baseline 2e98a3c450bddc0c1ae490f4c5c3fdc657debe4f. Phase02 M1 PASS / COMPLETED with user checkpoint approval and successful final verification. M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED. Historical session entries below retain their original evidence/status.**
 
 | Phase | Status | Evidence | Approved by user? |
 |---|---|---|---|
 | 00 Compatibility | COMPLETED (accepted playback/navigation scope) | R6 MP4 and controls PASS; R8 HTTPS HLS >30s + Stop PASS; remote PASS. Deferred gates listed below | Physical results and checkpoint commit/push approved; checkpoint published |
 | 01 UI/UX specification | COMPLETED (accepted scope) | Approved checkpoint f174f9ec1c406aea834f18352bf23b160c782d92; later deferred layouts preserved | Yes; not Phase02 execution approval |
 | 01.5 Interactive design preview | COMPLETED (accepted/published) | Checkpoint 170540900012a0bf67a1aa5e1a7d1c4dad125d46; Full View/direct immersive OK/Back restoration; simulated only | Yes; no production/native evidence inferred |
-| 02 Tizen shell | PENDING | None | No |
+| 02 Tizen shell | M1 PASS / COMPLETED; M2–M6 NOT STARTED | Both RSA-SHA512 signatures and 13 reference digests PASS; certificate continuity/dates, package/schema PASS; 8/8 tests including 22 security assertions | M1 checkpoint approved after final checks PASS; no TV action or M2 approval |
 | 03 Live TV/EPG | PENDING | None | No |
 | 03A Content Engine foundation (within 03) | PENDING implementation; architecture checkpoint READY_FOR_REVIEW | Free-first/product policy approved; ADR-004/005/008 and CE-01..16 specified, not executed | Documentation only; no workflow/hosting/code approval |
 | 04 Movies/Series/Search | PENDING | None | No |
@@ -19,7 +19,23 @@
 
 Statuses: PENDING → IN_PROGRESS → BLOCKED / READY_FOR_REVIEW → COMPLETED. Never set COMPLETED without command output or physical-device evidence and explicit user acceptance.
 
-## Current documentation gate — 2026-10-28
+## Current M1 accepted checkpoint gate — 2026-10-29
+
+User explicitly approved M1 Git checkpoint. Final typecheck/static build, all 8 tests/22 security assertions, runtime reproducibility, SDK schema/config/inventory, both cryptographic signatures/all 13 reference digests and certificate continuity/dates PASS. Original WGT hash unchanged; no resigning or TV work. M1 PASS / COMPLETED (identity/toolchain only); checkpoint commit/push authorized. No full PKI chain/revocation claim. Manifest and privacy/scope checks required before staging; exact outcome returned in final report. M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED.
+
+## Historical M1 final gate — 2026-10-29
+
+M1 technical verification PASS / READY_FOR_REVIEW. Strict URI resolver accepts only exact allowlisted relative paths and SDK encoded slash; signed XML unchanged. Both author/distributor cryptographic signatures, all 13 reference digests, certificate continuity and dates, identity/config/schema/content/CRC checks PASS using existing Java 8 XMLDSig. No full chain trust/revocation claim. Typecheck and 8 Node tests PASS (original 7 plus 22 Java adversarial assertions). Original WGT hash unchanged: 8382afd1b3266330ee6fbe45723fea574e71dc5600a521075abe78d18f63b2ee. No rebuild/resign/TV/commit/push. User acceptance pending; M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED. Earlier blocker records below are historical.
+
+## Historical M1 gate — 2026-10-29
+
+Algorithm/staging resolution: Java compile, strict typecheck, seven tests, runtime hashes, package content/config/path/privacy and SDK schema PASS. RSA-SHA512 and SHA512 are explicitly allowlisted alongside SHA256; no SHA1 or arbitrary algorithms. Crypto run stops at encoded Reference URI assets%2Ficon.png versus assets/icon.png. No URI policy change or retry; both cryptographic signatures/reference digests UNVERIFIED. Author certificate continuity/dates PASS, distributor UNVERIFIED; no chain/revocation claim. WGT unchanged; M1 BLOCKED pending narrow URI resolution review. See latest HANDOFF. M2–M6 NOT STARTED; Content Engine NOT IMPLEMENTED.
+
+## Historical documentation gate — 2026-10-28
+
+2026-10-29 M1 follow-up: approved named RSA-SHA256 URI substitution compiled successfully under Java 8. Existing WGT hash unchanged (`8382afd1b3266330ee6fbe45723fea574e71dc5600a521075abe78d18f63b2ee`); content/config/schema checks PASS. Both packaged signatures declare RSA-SHA512; strict RSA-SHA256 gate stops verification before cryptographic validation. Author certificate continuity/date check passed; distributor continuity and both cryptographic signatures/reference digests UNVERIFIED; no full PKI claim. Typecheck PASS, tests 6 PASS / 1 inventory FAIL because packaging added SDK output directories to staging. Five runtime build hashes unchanged. No rebuild/resign/TV action or retry. M1 remains BLOCKED; see HANDOFF. This supersedes the older compilation blocker below.
+
+Current execution update: FREE-FIRST architecture checkpoint is approved at baseline `2e98a3c450bddc0c1ae490f4c5c3fdc657debe4f`. User authorized Phase02 M1 identity/toolchain only. Package/application `O12p0Tvvrb` / `O12p0Tvvrb.LORITVProduction` allocated by installed SDK, target 10.0; strict TypeScript 7.0.2 + esbuild 0.28.2 boot, no runtime dependencies, privileges, external origins or media. Local typecheck/build, seven tests and secure SDK schema validation passed. One `tz pack-chain` build exited 0 with existing development profile. WGT SHA-256 `8382afd1b3266330ee6fbe45723fea574e71dc5600a521075abe78d18f63b2ee`; content/configuration checks passed. Cryptographic verification BLOCKED: SDK Java 8 cannot compile `SignatureMethod.RSA_SHA256`; signatures/digests/certificate continuity/CRC validation remain unverified. No retry, rebuild or TV contact. See current HANDOFF evidence; historical documentation-only authorization below is superseded by this M1 approval. M1 awaits blocker review, M2–M6 NOT STARTED, Content Engine NOT IMPLEMENTED; no commit/push.
 
 User Final Content Engine Architecture Decisions (FREE-FIRST) approved policy/documentation changes only. ADR-004/005/008, ARCHITECTURE.md section 13, roadmap 03A boundary and CE-01..16 acceptance targets are documented, not implemented. Product decisions: playable-only automatic catalog without mandatory playlist entry; global categorization subject to rights/territory; provider ads allowed/preserved, no LORI ads; production AVPlay with approved immersive OK/Back semantics. Free-first hosting recommendation is conditional Actions/Pages versus Cloudflare Pages; no account, workflow, host, signing key or paid backend created. Named providers and actual target region are unresolved.
 
