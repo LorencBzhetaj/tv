@@ -211,7 +211,7 @@ User visual approval received. M2 local frame/design/localization scope COMPLETE
 
 Footer review: main bottom equals footer top (separate Grid rows); initial partially visible controls are below the scroll fold.12 browser cases (Full/Standard,EN/SQ,1280x720/1920x1080/425x612) reach View and Language using arrow-to-settings,Enter,Tab; native select arrows keep their native selection behavior. Focused last control + outline remains above footer, minimum28.17px clearance, no horizontal overflow.6 Full Menu/Escape focus+exact-scroll restoration cases PASS. Language/view persist across reload; safe fallback/storage failure in automated tests PASS; console errors/warnings observed0. No app/CSS changes needed. Physical arrow-only native select/remote/overscan acceptance remains PENDING for M3/device validation.
 
-## Proposed M3 acceptance matrix — NOT RUN
+## Historical proposed M3 acceptance matrix — NOT RUN at planning time
 
 | ID | Proposed acceptance criterion | Evidence required / status |
 |---|---|---|
@@ -229,3 +229,51 @@ Footer review: main bottom equals footer top (separate Grid rows); initial parti
 | T02-M3-12 | Actual Samsung remote capability/overscan/readability evidence | Separately approved controlled deployment + user physical tests; PENDING |
 
 No M3 test or implementation is claimed PASS. Media actions have no playback consumer in M3; no AVPlay/catalog/provider scope. See HANDOFF for exact proposed files, Samsung documentation, approval decisions and permission gate.
+
+
+## Historical M3 local acceptance evidence — 2026-10-30
+
+Current M3 status READY_FOR_REVIEW.46 Node tests PASS:18 previous+28 M3; all22 XMLDSig security assertions preserved.3×1000 deterministic input/focus/history actions and50 input-owner install/dispose cycles PASS. Typecheck/build/SDK schema/staging inventory/privacy/manifest validated separately; no physical compatibility inferred. Earlier proposed matrix remains historical.
+
+| ID | Actual local result | Physical / remaining boundary |
+|---|---|---|
+| T02-M3-01 | PASS explicit directional graph/region/fallback tests and browser transitions | Actual remote key timing PENDING |
+| T02-M3-02 | PASS mandatory PC/TV numeric normalization, OK/Back/Menu single-owner tests and browser Menu | Physical delivered TV keys PENDING |
+| T02-M3-03 | PASS mock API absent/failure/partial registration; zero registration calls by default | No optional-key requirement/privilege added; hardware support PENDING |
+| T02-M3-04 | PASS missing/disabled/hidden/inert/disconnected fallback and remembered anchors | Physical focus/lifecycle PENDING |
+| T02-M3-05 | PASS nested scope/Tab trap unit tests; browser Menu and choice dialogs restore exact invoker+scroll | No real nested content screens introduced |
+| T02-M3-06 | PASS Full/Standard EN/SQ browser12-case matrix with footer clearance/no horizontal overflow | Samsung overscan/readability PENDING |
+| T02-M3-07 | PASS synthetic nested history, immutable origins, root Cancel-first UI, exit mock; future Player release guard | Production content routing and playback remain later work |
+| T02-M3-08 | PASS repeated/held/reentrant inputs, rapid Back and editing/media ownership tests |100ms direction/450ms Back parameters need device calibration |
+| T02-M3-09 | PASS1000 input +1000 focus +1000 history actions; bounded state;50 listener ownership cycles | Not a real-device soak/memory benchmark |
+| T02-M3-10 | PASS46 tests incl22 security assertions,strict build/typecheck/schema/inventory; final manifest/privacy checks | Unsigned staging only, no new WGT |
+| T02-M3-11 | PASS keyboard-only frame graph/dialog/menu/root Back browser flows;0 console warnings/errors | Nested screen restoration covered by unit fixtures, not real content routes |
+| T02-M3-12 | PENDING | Requires separate signed-package/deployment approval and physical Samsung testing |
+
+M3 acceptance is local technical evidence pending user review. No TV contact/install/launch, no auto app exit, no media consumer, no provider/Content Engine, no M4–M6 implementation, no commit/push. M1 rollback SHA-256 remains8382afd1b3266330ee6fbe45723fea574e71dc5600a521075abe78d18f63b2ee. Browser evidence includes EN/SQ persistence, modal current choice versus focus, Back to invoker, hidden-sidebar focus fallback and remembered content anchor.
+
+
+## M3 final physical acceptance — 2026-10-31
+
+M3 COMPLETED for the user-confirmed scope on Samsung UE50M70HAUXXH / Tizen TV 10.0, production O12p0Tvvrb.LORITVProduction. Results below come from the user, not inferred from browser tests. Historical local-only/pending records above are superseded only for these confirmed items. T02-M3-12 is PARTIAL overall: physical navigation accepted; optional capability/quantified overscan/readability/soak evidence remains pending.
+
+| Physical subtest | Result | Evidence |
+|---|---|---|
+| D-pad Up/Down/Left/Right | PASS | User confirms successful physical navigation |
+| OK / Enter activation | PASS | User physical confirmation |
+| Back / Return with focus restoration | PASS | User physical confirmation |
+| Menu overlay navigation | PASS | User physical confirmation |
+| Full View / Standard View | PASS | User physical confirmation |
+| English / Albanian switching | PASS | User physical confirmation |
+| Language persistence after reopening | PASS | User physical confirmation |
+| Modal focus trapping | PASS | User physical confirmation |
+| Focus and scroll restoration | PASS | User physical confirmation |
+| Samsung Home -> return to LORI TV | PASS | User physical confirmation |
+| Repeated/held keys and timing calibration | PENDING | Local automated evidence only; not explicitly confirmed physically |
+| Cancel-first root exit behavior | PENDING | Local browser/unit evidence only |
+| Deliberate Exit and relaunch | PENDING | Not explicitly confirmed in final physical results |
+| Optional hardware keys, quantified overscan/readability and long-run soak | PENDING | Outside confirmed physical scope |
+
+Package evidence: one signed build exit0; identity/config/schema/inventory/source/privacy/CRC PASS; author/distributor RSA-SHA512 signatures and6/6+7/7 digests PASS; certificate continuity/dates PASS, no full PKI trust/revocation validation. Installation exit0; first full-app-ID tz run failed, separately approved bare-package-ID launch succeeded exit0 PID357. Diagnostic full-ID uninstall exit0; applist confirms diagnostic absent and production present. M3 signed WGT: apps/tv/Build/package/Debug/package.wgt; SHA-256 033d277b734293e483dc6d53b3b8f9faa7bf463503e7f083ebd6aa7576731e4d. M1 rollback: apps/tv/Build/m1-reference/package.wgt; SHA-256 8382afd1b3266330ee6fbe45723fea574e71dc5600a521075abe78d18f63b2ee. Both hashes rechecked unchanged for this documentation closure. Build/package artifacts remain ignored and must not be committed. M1 restores the original boot baseline, not M2/M3 functionality.
+
+No new physical tests or application changes were performed for documentation closure. M4–M6 NOT STARTED; M4 begins only with separate architecture/requirements review approval.

@@ -11,7 +11,7 @@ Every ADR must include Context, Options, Decision, Evidence, Risks, Date, Approv
 | 004 | Free-first static publisher APPROVED as architecture policy; host recommendation conditional | Public-data rights, free budgets and actual TLS/CORS/cache tests before deployment; backend only by separate approval |
 | 005 | Playable-only/provider/ad policy APPROVED; named provider integrations pending | Provider registry, rights/publication evidence, territories, source resolution and native playback evidence |
 | 006 | Profile/PIN storage and threat model | Verified TV storage and lock-bypass tests |
-| 007 | Tizen remote focus engine | Measured D-pad navigation and Back behavior |
+| 007 | Explicit custom TypeScript graph/scopes implemented locally for M3 | Local tests/browser PASS; physical D-pad/Back/capability acceptance PENDING |
 | 008 | Signed versioned atomic catalog + bounded refresh/LKG/revocation APPROVED as design | Scheduling, expiry/outage, signature/schema/digest, rollback and migration acceptance still unimplemented |
 
 ## Recommended boundaries
@@ -79,3 +79,13 @@ Provider authentication is unresolved: never embed reusable provider credentials
 - **Risks:** offline revocation cannot be immediate; scheduler/CDN delay, stale clocks, partial uploads and compromise. Fail closed at validity expiry, enforce tombstones during rollback and test invalid-clock/outage paths.
 - **Date / approver:** 2026-10-28 / user for free-first/update requirements and documentation scope; parameter/hosting/native implementation acceptance pending.
 - **Status:** design APPROVED for documentation checkpoint review; all runtime verification PENDING.
+
+
+## ADR-007 — Local explicit remote/focus/navigation engine
+
+- Context: approved vanilla TypeScript/esbuild M1 toolchain and preserved uncommitted M2 frame; prototype geometric navigation is not production authority.
+- Options: retain temporary DOM-order adapter; add a library/framework; implement explicit local graph and scoped input/history.
+- Decision: explicit graph with stable region/node IDs, remembered anchors, modal snapshots and bounded navigation stack. One event owner normalizes mandatory keys; optional Tizen registration remains off without demonstrated requirement. No added privilege or dependency. Old PC adapter is unreferenced, preserved source.
+- Evidence:46 Node tests,22 XMLDSig security assertions,3×1000 stress actions and50 ownership cleanup cycles PASS;12 local browser cases, keyboard dialog/menu/exit safety and zero console errors PASS. Node constructor parameter properties were replaced by erasable typed fields for the existing Node24 test runner; no test loader introduced.
+- Risks: actual optional keys, IME/OS lifecycle and system forced long-Return exit, repeat timing and overscan are device-specific. Native preference popup keyboard handling uses app-owned option dialogs for deterministic M3 behavior; no visual token redesign. Real route rendering and Player release integration remain later scope.
+- Date:2026-10-30. Approver: user explicitly authorized M3 implementation in attached request; local implementation READY_FOR_REVIEW, user acceptance/physical-device release gate not yet complete. No other ADR renumbered or policy changed.

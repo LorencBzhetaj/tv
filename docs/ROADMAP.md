@@ -1,6 +1,6 @@
 # LORI TV — Execution Roadmap v3.5
 
-**Current authorization (2026-10-29): M1 published e22400d926d015061ea1805bed293925930e4691; M2 visual approval received and final local frame/design/localization validation PASS, M2 COMPLETED/uncommitted. Current task authorizes M2 finalization and M3 planning only.** No M3 implementation, TV actions, signing, Content Engine, hosting, commit or push. M3–M6 NOT STARTED; historical milestone records below do not grant new execution authority.
+**Current authorization (2026-10-31): M3 accepted/completed for confirmed physical navigation scope; documentation checkpoint preparation only.** Signed package/deployment evidence and remaining gates are in HANDOFF and ACCEPTANCE_TESTS. M4 ready for separately authorized architecture/requirements review, not implementation; M4–M6 NOT STARTED. No providers, Content Engine, hosting/workflows, staging, commit or push authorized. Earlier records historical.
 
 | Phase | Goal | Deliverables | Exit gate |
 |---|---|---|---|
@@ -63,10 +63,24 @@ ADR-004/005/008 policy and [ARCHITECTURE.md section 13](ARCHITECTURE.md#13-free-
 Dependency order: approved production shell/abstract fixtures (02) -> publisher/schema/allowlist/cache tests (03A) -> separately approved real Live provider/native playback tests (03) -> authorized VOD and linked metadata (04) -> advanced sports/reliability (06). Full Manager (08) is not a dependency for automatic catalog updates. No media integration or infrastructure creation is approved by this documentation checkpoint. New measurable tests CE-01..CE-16 are in ACCEPTANCE_TESTS.md; existing T03/T04/T06/T08 semantics remain.
 
 
-## Phase02 M3 proposed next milestone — approval required
+## Historical Phase02 M3 proposed next milestone — approval required at planning time
 
 M2 closed with18 tests/22 security assertions and12 browser footer/view/locale cases PASS; no footer overlap bug or runtime correction. Detailed M3 input/focus/history architecture, seven proposed new files, exact modification scope, test matrix and risks are in HANDOFF. ACCEPTANCE_TESTS T02-M3-01..12 all PENDING.
 
 Sequence after approval: typed remote actions/repeat guard -> optional Tizen key adapter -> explicit region/node focus graph and modal scopes -> bounded origin/focus/scroll history -> integrate existing Home/frame/preferences -> PC browser and regression checks. Optional Menu/media/colors require actual supported-key intersection and proposed tv.inputdevice privilege; OS Home/volume/power remain owned by Samsung. Native-select versus app-owned option-dialog decision and ADR-007 implementation choice need review. Synthetic nested screens test the stack only, no catalog/profile/Favorites/player implementation.
 
 First obtain separate M2 checkpoint approval if desired, then explicit M3 source/config approval. Physical Samsung validation/deployment is a later separate gate; prior diagnostic key/playback results do not certify production focus. No M3–M6 auto-start; no providers, paid infrastructure, Content Engine or AVPlay scope.
+
+
+## Historical M3 implementation review checkpoint — 2026-10-30
+
+Local explicit input owner, Tizen adapter, graph/scopes/scroll manager and bounded Back stack implemented without new dependencies or privileges. Existing Home/frame/preferences integrated; inactive M2 PC adapter retained but unbundled. Native select presentation gains app-owned remote choice dialogs, approved tokens unchanged. Only Home is rendered; nested routes tested synthetically, no catalog/provider/player integration. Future Player leave requires explicit release guard; no playback behavior implemented.
+
+46 tests,22 security assertions,3×1000 stress sequences,50 input-owner cleanup cycles and12 browser cases PASS; schema/inventory/typecheck/build PASS. Actual mandatory/optional key delivery, timing, lifecycle/Exit and Samsung readability remain physical-device gates, not reuse of diagnostic PASS. Next: user review, then separately authorized checkpoint/device-validation step. M3 not automatically completed or published; M4–M6 NOT STARTED.
+
+
+## M3 accepted completion / M4 boundary — 2026-10-31
+
+M3 COMPLETED in user-confirmed scope: actual Samsung D-pad,OK,Back,Menu,view modes,EN/SQ,language persistence,modal trapping,focus/scroll restoration and Home-return PASS. Signed WGT and cryptographic/digest/configuration checks PASS, one installation and corrected launch succeeded. Obsolete diagnostic removed using full application ID; production preserved. Physical held-key timing, Cancel-first exit, deliberate Exit/relaunch, optional keys, quantified overscan/readability and soak remain PENDING, not silently passed. Existing local46 tests/22 security assertions remain recorded evidence.
+
+Next permissible milestone is a separate M4 architecture and requirements review against approved shell/fixture plans, identifying scope, contracts and acceptance criteria before implementation. M4–M6 NOT STARTED. No Content Engine/provider/AVPlay work, workflow, hosting or infrastructure is authorized. M2/M3 source/checkpoint remains uncommitted; exact inventory review and separate Git approval required.

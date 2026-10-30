@@ -2,10 +2,10 @@
   "version": "3.5",
   "package_version": "3.5",
   "edition": "Multi-Agent Ready — documentation corrections 2026-10-26",
-  "status": "phase02_m2_completed_m3_plan_pending_approval",
+  "status": "phase02_m3_completed_checkpoint_pending",
   "repository_url": "https://github.com/LorencBzhetaj/tv.git",
   "development_started": true,
-  "generated_date": "2026-10-29",
+  "generated_date": "2026-10-31",
   "scope": "Planning and branding assets only, excluding this manifest, .git metadata, application sources, generated output and ignored private machine configuration. Diagnostic source status is recorded in existing phase documents.",
   "files": [
     {
@@ -40,18 +40,18 @@
     },
     {
       "path": "docs/ACCEPTANCE_TESTS.md",
-      "bytes": 30829,
-      "sha256": "3f76a192b0768c598458f608bbef65250b8f4e76e5a21e95f7e7fcebf7280d45"
+      "bytes": 36418,
+      "sha256": "93f1b0f79799061994657e091402c2e0694a7899128f1d66b482b2f4ed53f38c"
     },
     {
       "path": "docs/ARCHITECTURE_DECISIONS.md",
-      "bytes": 11086,
-      "sha256": "ce293f05abaaf6fac7f1b0a916af43829b9c78e804cbeac7333026ba5fa8aa40"
+      "bytes": 12747,
+      "sha256": "f43b4aaf8aa95ff7feb643667cced35e6376e00d5ba43d3ceff9bcdf6721801f"
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 25034,
-      "sha256": "a29e8b9be8f342b544f4bc714bd4e1cd2c43f92b4d8b8d6d7da14fd0383dcd9e"
+      "bytes": 28646,
+      "sha256": "e617ce08701429685ee6f8c4319b0817918e2b50beccee9a1fe1ab4e5c57a224"
     },
     {
       "path": "docs/DOCUMENTATION_REVIEW_2026-10-26.md",
@@ -60,8 +60,8 @@
     },
     {
       "path": "docs/HANDOFF.md",
-      "bytes": 85564,
-      "sha256": "9a68355d2023ea2da5d186355835ff2a4464f07012a57826bc0b7b3537e9b575"
+      "bytes": 99880,
+      "sha256": "9797c9f1c77a776aa5698e0314fd3a8dd94dd56804e03ad4ea190c18404e07d5"
     },
     {
       "path": "docs/HOW_TO_START_SQ.md",
@@ -95,13 +95,13 @@
     },
     {
       "path": "docs/PHASE_TRACKER.md",
-      "bytes": 42333,
-      "sha256": "3bf18ceb8044dc5b95717f5d3079e209875d0bdd30e907a62c82c4a997c9bfe5"
+      "bytes": 44467,
+      "sha256": "7ada1e08585b2a66034a1a5cdef19b375216806da6a6736b9615c56a4b926ff7"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 10902,
-      "sha256": "8e8058e5e30305a2bd3f630c8507e920f0f462858e5723c39cd589045ff10de0"
+      "bytes": 13041,
+      "sha256": "213b1061549e50107f86e252fe085a762bffcdd5c6566746a680efaf281d1a6d"
     },
     {
       "path": "docs/TV_ENHANCEMENTS_SPEC.md",
