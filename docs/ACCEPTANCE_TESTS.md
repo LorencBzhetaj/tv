@@ -277,3 +277,23 @@ M3 COMPLETED for the user-confirmed scope on Samsung UE50M70HAUXXH / Tizen TV 10
 Package evidence: one signed build exit0; identity/config/schema/inventory/source/privacy/CRC PASS; author/distributor RSA-SHA512 signatures and6/6+7/7 digests PASS; certificate continuity/dates PASS, no full PKI trust/revocation validation. Installation exit0; first full-app-ID tz run failed, separately approved bare-package-ID launch succeeded exit0 PID357. Diagnostic full-ID uninstall exit0; applist confirms diagnostic absent and production present. M3 signed WGT: apps/tv/Build/package/Debug/package.wgt; SHA-256 033d277b734293e483dc6d53b3b8f9faa7bf463503e7f083ebd6aa7576731e4d. M1 rollback: apps/tv/Build/m1-reference/package.wgt; SHA-256 8382afd1b3266330ee6fbe45723fea574e71dc5600a521075abe78d18f63b2ee. Both hashes rechecked unchanged for this documentation closure. Build/package artifacts remain ignored and must not be committed. M1 restores the original boot baseline, not M2/M3 functionality.
 
 No new physical tests or application changes were performed for documentation closure. M4–M6 NOT STARTED; M4 begins only with separate architecture/requirements review approval.
+
+
+## M4 architecture specification acceptance refinements — 2026-10-31
+
+Approved product policies do not constitute implementation/provider/device PASS. Existing CE-01..CE-16 retain IDs/phase ownership and remain PENDING execution. Refinements below specify future tests; none executed in this documentation task.
+
+| Spec gate | Existing criteria | Future evidence / status |
+|---|---|---|
+| GLOBAL territory | CE-04/06/07 |Provider/item grants/exclusions intersect; unknown required territory denies; UI language/timezone not rights evidence; worldwide grant documented; PENDING |
+| BROAD identity/hierarchy | CE-04/12/16 |13 schemas,stable IDs/aliases,reviewed cross-provider dedup,episode eligibility,international scopes and saved-reference migrations; PENDING |
+| Approved-contract discovery | CE-04/05/06/11 |Bounded pagination/quotas,origin/rights changes quarantined,expiry/revocation/attribution/publication validation; PENDING |
+| Eight evidence dimensions | CE-04/14 |Metadata/rights/reachability/playlist/format/profile/individual DEVICE/playing separated; HTTP200/profile PASS cannot invent individual DEVICE PASS; PENDING |
+| EPG/time | CE-12 |UTC/IANA/DST/ambiguous/missing-offset/overlap/mapping fixtures,48h window,independent freshness,no invented catch-up rights; PENDING |
+| Signing and atomic state | CE-05/07/08/09/10 |Approved exact-byte/target vectors; bad signatures/duplicate keys/replay/clock/reset,partial/mixed shards,tombstones surviving failed refresh and rollback; PENDING |
+| Cost/resources/scaling | CE-01/03/11/12 |Measured TLS/CORS/cache/quotas/bandwidth/storage/peak memory;20MiB active versus total LKG/staging/artwork budget resolved; no auto billing; PENDING |
+| Ads/security | CE-05/06/13 |Native ads preserved; no LORI ads/pop-ups/untrusted players/secrets; HLS nested-origin/redirect and native enforcement tests; PENDING |
+| AVPlay/UX | CE-14/15 |Provider-specific HLS/MP4 DEVICE evidence,cancelled callbacks/release acknowledgement,direct immersive/OK/layered Back/origin restoration; PENDING |
+| Migration/permissions | CE-01/06/16 |Stable IDs/schema/tombstones across approved host change; explicit trust/CSP/rights/budget permissions and independent signer; PENDING |
+
+Paid-if-justified authorizes evaluation of measured benefit, not purchases or relaxation of initial free-first CE-01. Existing budgets/refresh/revocation values remain proposed acceptance targets, not guaranteed scale/freshness. M4 ARCHITECTURE REVIEW READY_FOR_REVIEW; M4 IMPLEMENTATION NOT STARTED. No phase reassignment, provider integration or TV testing authorized.

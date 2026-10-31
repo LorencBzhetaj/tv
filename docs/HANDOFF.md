@@ -3,12 +3,21 @@
 **Project:** LORI TV (Samsung Tizen + Remote PWA + Manager)  
 **Canonical remote:** https://github.com/LorencBzhetaj/tv.git  
 **Package:** v3.5 baseline; Phase00 diagnostic and Phase01.5 browser preview checkpoints preserved
-**Current agent:** Codex (Phase02 M3 acceptance documentation)
+**Current agent:** Codex (M4 architecture specification)
 **Next agent:** Codex or Claude after user review; inspect current files first  
-**Current phase:** M1/M2 accepted; M3 COMPLETED for the user-confirmed physical navigation scope on Samsung UE50M70HAUXXH. M2/M3 application source remains uncommitted. Checkpoint documentation prepared for review; no stage/commit/push. M4 ready for a separate architecture/requirements review only; M4–M6 NOT STARTED; Content Engine NOT IMPLEMENTED.
-**Approved scope:** Record accepted M3 results and verify artifacts/documentation only. No TV commands, application changes, rebuild, signing, staging, commit/push or M4 implementation. Earlier records below are historical.
+**Current phase:** M3 accepted documentation published7009b81ab23874fc8c7bba0517e1d3c8ddb84af8; M4 architecture READY_FOR_REVIEW; M4 implementation NOT STARTED.23 local M2/M3 source paths preserved pending separate source checkpoint; Content Engine NOT IMPLEMENTED.
+**Approved scope:** M4 architecture documentation only: GLOBAL, FREE-FIRST/PAID-IF-JUSTIFIED, BROAD. No source/package/workflow/provider/hosting/account/TV/build/sign/stage/commit/push changes. Older records historical.
 
-## M3 final acceptance and checkpoint handoff — 2026-10-31
+## M4 architecture specification handoff — 2026-10-31
+
+- Preflight main/HEAD7009b81ab23874fc8c7bba0517e1d3c8ddb84af8, empty index;23 known local paths (8 tracked modified,15 untracked) match prior-review hashes and remain byte-preserved. Published M3 checkpoint is documentation only; source checkpoint separately approved before future development.
+- Approved GLOBAL, FREE-FIRST/PAID-IF-JUSTIFIED and BROAD policies are specified in ARCHITECTURE section15, the canonical detailed refinement of section13.13 record schemas, stable IDs/aliases, provider contracts, Live/VOD/EPG, eight evidence dimensions, single AVPlay controller/UX, publication/cache/revocation, cost estimates, threats, permissions and phase ownership are covered. No blanket worldwide rights, fake playable entries or guaranteed counts.
+- ADR-004/005/008 dated refinements preserve numbering; ADR-007/M3 engine unchanged. No host, named provider or cryptographic scheme selected. Phase02 fixtures/interfaces;03A publisher/Content Engine;03 Live/EPG;04 VOD;06 sports/reliability;08 Manager. M4 is architecture-review workstream only.
+- Open gates: per-provider integration/publication rights/territory/evidence thresholds; territory proof; host/account budget/cache behavior; signature algorithm/exact bytes/bootstrap/rotation/clock/reset replay; mandatory/lazy shards and total disk/peak memory. Paid recommendation requires measured material benefit and separate spend/deployment approval. Metadata availability never grants media rights.
+- Task files: ARCHITECTURE,ARCHITECTURE_DECISIONS,ROADMAP,PHASE_TRACKER,HANDOFF,ACCEPTANCE_TESTS,PACKAGE_MANIFEST. Existing76 manifest entries retained/refreshed; historical records preserved. Documentation checks: manifest76/76,21 Markdown tables,3 local file references,privacy/scope/whitespace PASS;23 preserved-source hashes PASS. No runtime or provider/device tests performed; those remain PENDING.
+- Next: user specification review and unresolved-decision approval, then separate M2/M3 source checkpoint and exact implementation scope. No source/package/workflow/account/provider/hosting/TV/build/sign/stage/commit/push actions. M4 ARCHITECTURE REVIEW READY_FOR_REVIEW; M4 IMPLEMENTATION NOT STARTED.
+
+## Historical M3 final acceptance and checkpoint handoff — 2026-10-31
 
 - User explicitly accepts M3. Production package O12p0Tvvrb, application O12p0Tvvrb.LORITVProduction, version 0.1.0, target Samsung UE50M70HAUXXH / Tizen TV 10.0. M3 COMPLETED for the confirmed navigation/localization/lifecycle-return scope; untested capabilities below are not implied PASS. This record supersedes older M3 review/physical-pending status and dated ADR-007 evidence, without changing its architectural decision.
 - User-observed physical PASS: D-pad directions; OK/Enter activation; Back/Return with focus restoration; Menu overlay navigation; Full/Standard views; English/Albanian switching; language persistence after reopening; modal focus trapping; focus/scroll restoration; Samsung Home -> return to LORI TV. Separate repeated/held-key timing, Cancel-first root exit and deliberate Exit/relaunch were not explicitly confirmed in the final acceptance list and remain PENDING.

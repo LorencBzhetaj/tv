@@ -1,13 +1,13 @@
 # LORI TV — Phase tracker
 
-**As of 2026-10-31: M3 COMPLETED for user-confirmed Samsung UE50M70HAUXXH physical navigation scope; signed package verified and deployed, obsolete diagnostic removed. M2/M3 source remains uncommitted; checkpoint documentation ready for review, no stage/commit/push. M4 ready for separate architecture/requirements review only; M4–M6 NOT STARTED; Content Engine NOT IMPLEMENTED. Older records historical.**
+**As of2026-10-31: M3 accepted documentation checkpoint7009b81ab23874fc8c7bba0517e1d3c8ddb84af8 published;23 M2/M3 source paths preserved locally pending separate source checkpoint. M4 architecture READY_FOR_REVIEW with GLOBAL / FREE-FIRST, PAID-IF-JUSTIFIED / BROAD policies approved. M4 implementation NOT STARTED; M5/M6 NOT STARTED; Content Engine NOT IMPLEMENTED. No source/TV/hosting/workflow/stage/commit/push authorization. Older records historical.**
 
 | Phase | Status | Evidence | Approved by user? |
 |---|---|---|---|
 | 00 Compatibility | COMPLETED (accepted playback/navigation scope) | R6 MP4 and controls PASS; R8 HTTPS HLS >30s + Stop PASS; remote PASS. Deferred gates listed below | Physical results and checkpoint commit/push approved; checkpoint published |
 | 01 UI/UX specification | COMPLETED (accepted scope) | Approved checkpoint f174f9ec1c406aea834f18352bf23b160c782d92; later deferred layouts preserved | Yes; not Phase02 execution approval |
 | 01.5 Interactive design preview | COMPLETED (accepted/published) | Checkpoint 170540900012a0bf67a1aa5e1a7d1c4dad125d46; Full View/direct immersive OK/Back restoration; simulated only | Yes; no production/native evidence inferred |
-| 02 Tizen shell | M1/M2 accepted; M3 COMPLETED (confirmed scope); M4–M6 NOT STARTED |46 tests/22 security assertions; signed M3 package verified; installation/launch exit0;10 user-confirmed physical navigation/localization/return categories PASS | M3 accepted; checkpoint staging/commit/push and M4 work need separate approval |
+| 02 Tizen shell | M1/M2 accepted; M3 COMPLETED; M4 architecture READY_FOR_REVIEW; M4–M6 implementation NOT STARTED | M3 evidence preserved; M4 contracts/security/cost specification only | Product policy/documentation approved; source checkpoint and implementation need separate approval |
 | 03 Live TV/EPG | PENDING | None | No |
 | 03A Content Engine foundation (within 03) | PENDING implementation; architecture checkpoint READY_FOR_REVIEW | Free-first/product policy approved; ADR-004/005/008 and CE-01..16 specified, not executed | Documentation only; no workflow/hosting/code approval |
 | 04 Movies/Series/Search | PENDING | None | No |
@@ -264,3 +264,8 @@ This entry supersedes earlier preparation/deployment/pending summaries for the t
 - Written specification COMPLETE for approved scope; closure READY_FOR_REVIEW. Deferred Manager/external-cast detail, PIN, Sleep Timer, optional mini-player/PiP, recovery/soak/unverified capabilities remain unimplemented and do not block initial shell unless a direct dependency emerges.
 - Phase02 proposed directory apps/tv and distinct app identity/stack/focus engine still require explicit approval; no directory/dependency/certificate created. Final T02 acceptance includes Player release failure and origin restoration.
 - Seven existing planning/manifest files updated; no diagnostic/mockup changes, runtime tests/build/signing/install, staging/commit/push or Phase00 retest. Final document/manifest integrity checks recorded in session output.
+
+
+## M4 architecture-only gate — 2026-10-31
+
+GLOBAL country-aware rights, FREE-FIRST/PAID-IF-JUSTIFIED and BROAD approved-provider expansion documented in ARCHITECTURE section15 with existing ADR refinements. CE-01..16 and specification refinements remain PENDING execution. No named provider, signature scheme or host selected; phase ownership unchanged.23 known local source paths verified/preserved byte-for-byte; separate source checkpoint precedes development. Documentation/manifest edits only, no app/package/workflow/account/TV/build/stage/commit/push. M4 ARCHITECTURE REVIEW READY_FOR_REVIEW; M4 IMPLEMENTATION NOT STARTED.

@@ -1,6 +1,6 @@
 # LORI TV — Execution Roadmap v3.5
 
-**Current authorization (2026-10-31): M3 accepted/completed for confirmed physical navigation scope; documentation checkpoint preparation only.** Signed package/deployment evidence and remaining gates are in HANDOFF and ACCEPTANCE_TESTS. M4 ready for separately authorized architecture/requirements review, not implementation; M4–M6 NOT STARTED. No providers, Content Engine, hosting/workflows, staging, commit or push authorized. Earlier records historical.
+**Current authorization (2026-10-31): M4 architecture documentation only; GLOBAL / FREE-FIRST, PAID-IF-JUSTIFIED / BROAD product policies approved.** Specification READY_FOR_REVIEW; M4 implementation NOT STARTED. No source/provider/workflow/hosting/TV/Git changes authorized. M3 documentation checkpoint7009b81 published;23 local M2/M3 implementation paths preserved pending separate source checkpoint. Phase boundaries unchanged.
 
 | Phase | Goal | Deliverables | Exit gate |
 |---|---|---|---|
@@ -84,3 +84,8 @@ Local explicit input owner, Tizen adapter, graph/scopes/scroll manager and bound
 M3 COMPLETED in user-confirmed scope: actual Samsung D-pad,OK,Back,Menu,view modes,EN/SQ,language persistence,modal trapping,focus/scroll restoration and Home-return PASS. Signed WGT and cryptographic/digest/configuration checks PASS, one installation and corrected launch succeeded. Obsolete diagnostic removed using full application ID; production preserved. Physical held-key timing, Cancel-first exit, deliberate Exit/relaunch, optional keys, quantified overscan/readability and soak remain PENDING, not silently passed. Existing local46 tests/22 security assertions remain recorded evidence.
 
 Next permissible milestone is a separate M4 architecture and requirements review against approved shell/fixture plans, identifying scope, contracts and acceptance criteria before implementation. M4–M6 NOT STARTED. No Content Engine/provider/AVPlay work, workflow, hosting or infrastructure is authorized. M2/M3 source/checkpoint remains uncommitted; exact inventory review and separate Git approval required.
+
+
+## M4 architecture review workstream — 2026-10-31
+
+ARCHITECTURE section15 owns detailed system/contracts/flows/security/cost specification; ADR-004/005/008 dated refinements record approved policies versus open gates. Sequence: review contracts and unresolved provider/territory/signing/cache/host decisions -> separately checkpoint existing M2/M3 source -> obtain exact implementation authorization. No extra numbered phase. Phase02 interfaces/fixtures ->03A publisher/Content Engine ->03 Live/EPG ->04 VOD ->06 sports/reliability ->08 Manager. GLOBAL/BROAD imply neither worldwide rights nor promised content counts. Paid-if-justified needs measured benefit and separate spend/deployment approval. M4 ARCHITECTURE REVIEW READY_FOR_REVIEW; M4 IMPLEMENTATION NOT STARTED.

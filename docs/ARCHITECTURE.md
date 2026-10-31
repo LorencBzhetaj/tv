@@ -118,7 +118,7 @@ See `docs/TV_ENHANCEMENTS_SPEC.md`.
 
 ## 13. Free-first Content Engine contract — 2026-10-28
 
-Product policy APPROVED by user; documentation checkpoint READY_FOR_REVIEW. No implementation/hosting/workflow approved or created. This section supersedes older metadata-only watchable catalog, optional production-player choice and Phase08-only publisher assumptions. ADR-004/005/008 in ARCHITECTURE_DECISIONS.md own the decisions; no named content provider is approved merely by this design.
+Product policy APPROVED by user; latest GLOBAL / FREE-FIRST, PAID-IF-JUSTIFIED / BROAD decisions and detailed contracts are in section 15 (2026-10-31), READY_FOR_REVIEW. No implementation/hosting/workflow approved or created. This section supersedes older metadata-only watchable catalog, optional production-player choice and Phase08-only publisher assumptions. ADR-004/005/008 in ARCHITECTURE_DECISIONS.md own the decisions; no named content provider is approved merely by this design.
 
 ### Deployment and responsibilities
 
@@ -195,3 +195,138 @@ Home remains the only implemented screen. Existing preference controls open app-
 No optional-key requirement currently exists: configureOptionalKeys receives no requested keys, does not call getSupportedKeys/registerKey and needs no tv.inputdevice privilege. Adapter supports bounded, allowlisted discovery/registration only with explicit future request+approval; unsupported API/errors leave mandatory navigation usable. Media/color actions have no active consumer and are not captured in this frame. Menu always has an on-screen alternative. Home/volume/power and system long-Return remain OS-owned. Explicit confirmed Exit alone may call isolated getCurrentApplication().exit(); PC absence/failure leaves a cancelable error, never a false success.
 
 Historical local-only evidence (2026-10-30):46 Node tests PASS (18 previous +28 M3),22 XMLDSig security assertions PASS,3×1000 deterministic stress actions PASS,50 input-owner install/dispose cycles PASS;12 browser cases PASS before signing/deployment. Accepted physical navigation and signed deployment now recorded above and in HANDOFF; optional hardware, repeat calibration and quantified overscan/readability remain PENDING. FREE-FIRST contracts unchanged; M4–M6 NOT STARTED.
+
+
+## 15. M4 final Content Engine specification — 2026-10-31
+
+M4 ARCHITECTURE REVIEW: READY_FOR_REVIEW. M4 IMPLEMENTATION: NOT STARTED. Confirmed product policies: GLOBAL territory architecture; FREE-FIRST, PAID-IF-JUSTIFIED hosting; BROAD catalog. This section refines section13/ADR-004/005/008, retaining their phase ownership. Named providers, deployed host, signing scheme and runtime guarantees remain unresolved. Older React/Vite and HTML5-fallback candidates do not supersede the approved vanilla TypeScript/esbuild toolchain and production AVPlay policy. This specification creates no code, workflow, account, infrastructure or integration.
+
+### System and responsibilities
+
+Scheduled publisher -> approved provider adapters -> canonical normalization/deduplication -> rights/territory/technical eligibility -> signed static catalog -> HTTPS host -> TV verification/cache -> eligible UI/search projection -> content-ID resolver -> single AVPlay session -> direct provider media. No LORI media proxy/transcoder, permanent backend, mandatory paid subscription or always-on PC.
+
+~~~mermaid
+flowchart TD
+ Registry[Approved provider contracts and rights] --> Adapters[Bounded ingestion adapters]
+ Feeds[Documented Live VOD metadata EPG feeds] --> Adapters
+ Adapters --> Normalize[IDs normalization deduplication validation]
+ Normalize --> Gate[Rights territory expiry and source gates]
+ Gate --> Publisher[Versioned publisher and independent catalog signer]
+ Publisher --> Host[Static HTTPS catalog]
+ Host --> Verify[TV signatures schema digests and time checks]
+ Verify --> Policy[Policy sequence and persistent revocations]
+ Verify --> Cache[Transactional catalog cache]
+ Cache --> Eligible[Eligible browse and search projection]
+ Policy --> Eligible
+ Eligible --> UI[Existing shell focus localization]
+ UI --> Resolver[Content-ID playback resolver]
+ Policy --> Resolver
+ Resolver --> Controller[Single session controller]
+ Controller --> AVPlay[Samsung AVPlay]
+ AVPlay --> Media[Approved provider origins]
+~~~
+
+Publisher owns ProviderRegistry, ProviderAdapter, CatalogNormalizer, RightsEligibilityPolicy, EPGNormalizer, bounded SourceProbe, CatalogPublisher and CatalogSigner. TV owns ControlVerifier, CatalogRepository, EligibilityProjection, local SearchIndex, PlaybackResolver and PlaybackSessionController/AVPlayAdapter. Keep TV modules local to apps/tv; no speculative shared-package/framework/service scaffold. Public exports exclude private rights evidence and credentials. Providers requiring secret-bearing playback/entitlement wait for separately approved backend/security/cost architecture.
+
+### Canonical schema contract v1 (specification only)
+
+Records use bounded stable IDs, explicit schema versions, validated relationships and provenance. Strings are data, never HTML. UTC timestamps carry explicit offsets; durations use milliseconds; countries use explicit country codes, languages BCP47 and timezones IANA names. Reject unsupported major versions and malformed/duplicate relationships; schema migrations need compatibility tests. Unknown values remain explicit.
+
+| Record | Required fields and relationships |
+|---|---|
+| Provider | id,name,contractVersion,approvalStatus,documented endpoints and API/media/CDN/artwork origins,capabilities,attribution,auth/DRM/ad policy,quotas,reviewedAt,validUntil,rightsRecordIds |
+| RightsRecord | id,providerId,evidenceRef,rightsHolder,allowedUses with separate metadata/artwork/EPG/media-URL publication grants,countries/worldwide grant/exclusions,startsAt,expiresAt,reviewDueAt,status/revocation reference |
+| ContentItem | id,providerIds/aliases,kind movie/episode,localized titles/descriptions,classification,categories/genres/year,artworkIds,sourceIds; metadata cannot imply playable |
+| Channel | id,providerChannelId/aliases,localized names,country/languages/categoryIds,logoArtworkId,sourceIds,versioned epgMappingId |
+| Series | id,providerSeriesId/aliases,localized metadata,artworkIds,seasonIds; watchable visibility requires eligible descendants |
+| Season | id,seriesId,providerSeasonId,number or explicit special ordering,episodeIds |
+| Episode | id,seriesId/seasonId,providerEpisodeId,number/order,contentItemId; per-episode eligibility |
+| PlaybackSource | id,providerId,contentItemId or channelId,approved public HTTPS URL,format HLS/MP4,codecs/container/profile,rightsRecordId,territoryPolicy,expiresAt,resolvedAt,capabilityEvidenceRef,auth/DRM/header policy |
+| SourceObservation | id,sourceId,observedAt,observationExpiresAt,resolution/playlist/format results,deviceProfileEvidenceRef,individualDeviceStatus,reasonCodes; separate from session state |
+| Programme | id,providerProgrammeId,channelId,startsAtUTC,endsAtUTC,localized title/description,original timezone/offset evidence,revision/freshness references |
+| Artwork | id,providerId,permitted HTTPS origin or licensed exported path,type/dimensions,rightsRecordId,attribution,cache/republication policy,expiry |
+| CatalogRevision | schemaVersion,revisionId,generatedAt,immutable shard paths/digests/sizes,required-shard inventory,provider/attribution references |
+| CatalogControl | schemaVersion,policySequence,currentRevision/digests,issuedAt,validUntil,revoked provider/source IDs,signingKeyId,envelope version; final signature scheme unresolved |
+
+Stable IDs use providerId plus documented immutable provider ID; aliases/tombstones preserve renamed references. Never use title, localized text, URL or array position as identity. Cross-provider dedup needs reliable external identifiers or reviewed mappings, never title-only matching. Keep editions/regional feeds/episode variants distinct and source-specific rights separate. Missing provider IDs require an approved deterministic identity rule. Public evidenceRef is a safe citation/ID, not private document data. Effective validity is bounded by the earliest control/source/rights/review/observation expiry. Saved references survive versioned alias changes.
+
+### Provider contracts and controlled discovery
+
+A contract defines documentation/feed endpoints, permitted uses/publication, territory, stable IDs, origin/redirect allowlists, pagination/cursors, formats, attribution, EPG/artwork rights, auth/DRM/ads, quotas, timeouts, response/decompression limits, retries and revocation. Operations discover bounded candidates, normalize records, attach provenance/rights, resolve permitted public sources and return timestamped technical observations/reason codes. Adapters cannot approve rights, widen trust or send executable UI logic.
+
+Automatic expansion stays inside that approved contract. New domains/material terms/auth/DRM/rights changes are quarantined. Discovery cannot renew failed observations or fabricate inventory. TV users need no playlist/URL entry; operator approval of a provider is separate from daily automated updates. Provider-specific lower quotas and Retry-After override generic defaults.
+
+No named integration is approved. Prior research identified Blender open films, Wikimedia media and NASA material only as per-item rights-review candidates; TMDB supplies metadata/artwork, not video rights. Automated access, direct URL/hotlinking, publication rights, territory and Samsung behavior remain unverified per candidate. Live/EPG/sports providers are unselected. Public URLs, open-source adapter licenses and personal use do not grant content integration rights.
+
+### GLOBAL, BROAD and playable-only policy
+
+GLOBAL is international country-aware architecture, not worldwide access. Provider and content grants intersect; exclusions/revocations override grants. Unknown required territory or conflicting/undocumented grants fail closed. Worldwide eligibility needs documented rights. EN/SQ UI language and display timezone are not territory proof; a user-declared country cannot satisfy stronger provider geolocation/entitlement requirements. Territory acquisition/evidence remains a provider-specific approval gate. No geo/auth/DRM bypass.
+
+BROAD covers Live, sports channels, movies, series/seasons/episodes, EPG, categories/languages, metadata/artwork. Expand through approved contracts only. Initial1000-channel/500-VOD-or-episode caps are resource ceilings, not promised counts. Larger budgets require measured device/network/provider evidence and approval. Empty legal categories are honest.
+
+Eight distinct dimensions: metadata found; rights approved; source reachable; playlist validated; format validated; Samsung provider/format profile tested; individual source tested; currently playing. Each observation retains timestamp, expiry and evidence. Profile PASS/HTTP200 cannot create individual DEVICE PASS. Required per-provider evidence thresholds need approval; individual status remains UNKNOWN until actually tested.
+
+Main Home/browse/search requires authorized provider, valid rights/territory/source/control, unexpired authorization, supported format/required device-profile evidence and no revocation/known failure. Recheck at Play and policy/time changes; eligibility is a snapshot, not a future network guarantee. Failed source loses eligibility until revalidation. A different eligible source may preserve item visibility, without silent playback substitution. Saved/history references may remain unavailable with disabled Play/reason. Series/seasons expose only eligible episodes. Zero LORI-injected ads, pop-ups, untrusted players or unapproved trackers; preserve and disclose provider-native advertising without stripping it.
+
+### Live, VOD, search and EPG flows
+
+Live: approved feed -> bounded parse -> stable channel/alias mapping -> licensed metadata/logo/country/language/category normalization -> rights/territory/source checks -> eligible projection. Focused, selected and playing channel stay distinct. Sports category/event metadata cannot establish broadcast rights.
+
+VOD: approved playable inventory -> canonical work/season/episode relationships -> permitted metadata/artwork join -> rights/source/profile observations -> eligible projections. Do not import whole metadata libraries as watchable titles. Local search normalizes Unicode/accents/aliases and supports ALL/CHANNELS/SPORTS/MOVIES/SERIES with the same eligibility rules. No internet-wide stream search; missing artwork gets a placeholder.
+
+EPG: approved XMLTV/API -> secure bounded parser -> versioned provider-channel mapping -> UTC intervals -> revision-bound shards -> IANA local display. Explicit timezone contract required; ambiguous/missing-offset or nonexistent DST times are quarantined, never guessed from TV locale. Validate start<end, IDs, duplicate/overlap policy, duration/window and mapping changes. Keep conflicts observable, never invent programmes or catch-up rights. Retain next48h/six-hour refresh targets within rights/quotas; EPG freshness is independent. Missing/stale schedules do not invalidate otherwise eligible channels.
+
+### Playback integration and UI invariants
+
+Resolver accepts catalog IDs only and returns an eligible descriptor or typed reason. One controller owns AVPlay open/listeners/display/prepare/play/pause/stop/close and cancellation generation. States include idle,preparing,ready,playing,paused,buffering,ended,error,releasing; loading is not playback success. Stale prepare callbacks cannot start cancelled/replaced sessions. Navigation waits for release acknowledgement; failure leaves a visible safe error, not background audio.
+
+HTTPS HLS/MP4 profiles require per-provider target evidence; Phase00 sample PASS does not certify new sources. Bounded preparation/errors, responsive Back/Stop and explicit Retry precede advanced recovery. No authorization/geo retries, automatic HTML5 fallback, untrusted fallback, autoplay, mini-player or background playback. Same-item alternatives must be preapproved; advanced retry/soak remains owning-phase work.
+
+Preserve Full default/Standard, EN/SQ, existing tokens and focus engine. Watch/Play enters immersive aspect-preserving video; OK shows controls; Back dismisses topmost dialog, then visible controls, then hidden-controls Stop/Close plus origin/item/focus/scroll. Normal Player Back Stop/Close; explicit presentation switches preserve session. Paused controls remain accessible. Native display/release/suspend semantics need future device proof, not inference from M3 navigation.
+
+### Publication, signing, cache and revocation
+
+Retain ADR-008 immutable revisions, digests, signed control, monotonic sequence, persistent tombstones and transactional activation. Bundle approved origin/key bootstrap in signed TV app; remote data cannot enlarge trust. Public catalog excludes credentials, cookies, bearer/private signed URLs, private evidence/payloads and personal history. Export only explicit public inventory, never repository/raw feeds.
+
+Signing evaluation, not algorithm approval: compare RSA-SHA256 and ECDSA-P256/SHA256 against actual TV WebCrypto support, encoding, complexity and rotation; Ed25519 requires target evidence rather than an assumed polyfill. Candidate design signs exact versioned UTF-8 payload bytes in an envelope; verify those bytes, never reserialized JSON. Final choice must define key/algorithm allowlists, byte/signature encoding, duplicate-key rejection, size limits, any canonical generation, test vectors, bootstrap and rotation. No scheme chosen or key generated. Independent catalog signing never reuses Tizen certificates.
+
+Serialize one publisher, revalidate trusted active state before assigning higher sequence, validate budgets/rights before signing, publish complete explicit artifact and verify deployed bytes. Current plus retained eligible revisions fit aggregate50MiB export cap; no generated Git commits. CDN atomicity is not assumed. TV persists valid higher policy/tombstones independently of catalog activation: apply revocation even if new shards fail. Activate required verified schema/digest/relationship-consistent shards in one transaction. Lazy optional shards remain revision-bound; missing means loading/unavailable, not mixed revisions. Mandatory/lazy split remains approval gate.
+
+LKG never extends expiry, ignores known failures or undoes tombstones. Rollback uses higher policy sequence and current rights/expiry filtering. Tombstone compaction cannot revive sources and needs proof. Valid revocation disables Play and stops affected active sessions. Persisted time high-watermarks/session monotonic time help detect rollback but are not trusted hardware time; uncertain time fails closed. Cold-reset replay and reliable-time bootstrap remain security gates.
+
+Retain six-hour publisher,15min foreground/startup/resume checks,<=24h lease,<=10min control cache age and<=30min online revocation adoption after successful publication as targets only. Offline/delayed discovery cannot be immediate. Show stale state and disable playback at expiry. Active cache20MiB remains; total disk/peak memory including LKG/staging/EPG/artwork must be specified before implementation. Eviction cannot delete progress or revocation state.
+
+### FREE-FIRST, PAID-IF-JUSTIFIED costs and migration
+
+GitHub Actions publisher/GitHub Pages initial candidate; Cloudflare Pages alternative; neither selected/provisioned. Section13 linked primary terms/quotas/cache/scheduling constraints require deployment-time/account checks. No mandatory subscription, home PC, backend, media hosting or custom domain. Paid recommendations need measured material benefit, free-alternative comparison, monthly cap/cancellation/migration plan and separate approval before spending/provisioning. Quota exhaustion pauses publishing, never auto-upgrades.
+
+| Planning scenario | Estimate/constraint, not measured usage |
+|---|---|
+| One TV,8KiB control,15min polling,30days always foreground |2880 checks/22.5MiB control before conditional-request savings |
+|5MiB catalog, four changed revisions/day,30days |600MiB catalog/TV/month plus control,EPG/artwork and overhead |
+|256KiB control and20MiB catalog at same worst-case cadence |720MiB control plus2400MiB catalog/TV/month before cache savings; caps are not expected sizes |
+| Publication storage |Aggregate <=50MiB including retained revisions/exported artwork; no hosted media |
+| Publisher compute |Up to1240min/31days at four10min runs/day, before other jobs; <=2 upstream concurrency/<=2 transient retries; lower quotas win |
+| TV resources |Active cache<=20MiB; total LKG/staging/artwork disk and peak parsing/activation memory unresolved; measure before scaling |
+
+Media bandwidth runs TV-to-provider, outside catalog-host estimates. Artwork has separate rights/traffic/privacy requirements. Metadata daily/EPG six-hour cadence remains a target. Scheduler delay/drop/inactivity-disable means no indefinite unattended SLA; Cloudflare hosting alone does not fix Actions scheduling. Migration preserves stable IDs/schema/rights/tombstones/profile references and requires approved HTTPS origins/trust/CSP plus TLS/CORS/cache/rollback tests. No host selection grants content rights.
+
+### Threat model, permissions and phase gates
+
+| Threat/boundary | Required mitigation/evidence |
+|---|---|
+| SSRF/redirects/private networks |Exact HTTPS origin allowlists, DNS/IP checks bound to connection, revalidate every redirect, bounded timeout/decompression/size; no arbitrary URL fetch |
+| HLS resource escape |Validate variants,segments,initialization,keys,subtitles and redirects; actual native CSP/redirect enforcement needs device evidence or provider is blocked |
+| XML/JSON/XSS |DTD/entities disabled, bounded schema/relationship checks, duplicate signed-data keys rejected, safe text rendering, no remote executable UI |
+| Rights/geo/ads |Per-use rights and attribution, unknown restrictions deny, no auth/DRM/geo/ad bypass |
+| Secrets/public exports |Field/file allowlists, bounded redacted logs, no credentials/private payload/history; preview deployments are public exposure too |
+| Tamper/replay/clock |Approved signature scheme, pinned keys/digests, sequence/tombstones, time/reset gates and atomic negative tests |
+| CI supply chain |Trusted jobs only, least privilege, pinned approved actions/dependencies, no secrets in untrusted PR jobs, bounded artifacts/no auto billing |
+
+Future approval may require GitHub administration/Actions/Pages settings and scoped deployment permissions/OIDC, independent CI catalog-signing secret/public TV key, optional Cloudflare account/project/scoped token, provider API accounts/actual publication permissions/attribution, territory evidence and narrow Tizen internet/access/CSP updates. No Tizen private keys in publisher CI. API registration alone is not rights evidence. None created now.
+
+Phase02 shell/controller/catalog contracts use fixtures only;03A Content Engine/publisher;03 Live/EPG;04 VOD;06 sports/reliability;08 Manager. M4 here is review workstream, not reassignment.23 preserved local M2/M3 paths require a separately approved source checkpoint before future development;7009b81 publishes documentation only.
+
+CE-01..CE-16 remain PENDING execution. Tests progress through schema/identity/dedup/eligibility units, hostile URL/parser/crypto/replay/clock negatives, mocked adapter/quota/outage fixtures, publication corruption/cache transactions, approved host budget/TLS/CORS/timing measurement, provider rights review and separately approved real-TV playback/release. No HTTP200/browser evidence becomes DEVICE PASS.
+
+Open approvals: named providers and per-use rights; territory acquisition/proof; actual host/account budgets; signer algorithm/exact bytes/bootstrap/rotation/time/reset replay; mandatory/lazy shards and total disk/peak memory; per-provider evidence threshold; source checkpoint and implementation scope. M4 ARCHITECTURE REVIEW READY_FOR_REVIEW; M4 IMPLEMENTATION NOT STARTED.
