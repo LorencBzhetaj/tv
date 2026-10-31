@@ -4,17 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>LORI TV · Production boot</title>
+  <title>LORI TV</title>
   <link rel="stylesheet" href="boot.css">
 </head>
 <body>
-  <main aria-labelledby="boot-title">
-    <h1 id="boot-title">LORI TV</h1>
-    <p>Home · Production boot · Phase 02 / M1</p>
-    <p id="boot-status" role="status" aria-live="polite">Starting local application…</p>
-    <p>No playback or content catalog is implemented.</p>
-    <noscript>JavaScript is required to complete the local boot check.</noscript>
-  </main>
+  <div id="app"></div>
+  <p id="boot-status" class="sr-only" role="status" aria-live="polite"></p>
+  <noscript>Enable JavaScript to open LORI TV.</noscript>
   <script src="app.js" defer></script>
 </body>
 </html>

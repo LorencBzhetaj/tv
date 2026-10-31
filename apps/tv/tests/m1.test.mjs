@@ -3,15 +3,14 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import vm from 'node:vm';
+import { boot } from './dom-helper.mjs';
 import { root, stage, runtimeFiles, inventory, verifyStage, safeArchivePath, sha } from '../scripts/lib.mjs';
 
 test('complete minimal staging, source bytes and deterministic inventory', async () => {
   assert.deepEqual(await verifyStage(), [...runtimeFiles,'tizen_web_project.yaml'].sort());
 });
 test('boot bundle updates only the accessible status; no network or media globals', async () => {
-  const status={textContent:'Starting',dataset:{}};
-  const context={document:{getElementById:id=>{assert.equal(id,'boot-status');return status;}}};
-  vm.runInNewContext(await fs.readFile(path.join(stage,'app.js'),'utf8'),context);
+  const {status} = await boot();
   assert.equal(status.textContent,'Local production boot ready.');assert.equal(status.dataset.state,'ready');
 });
 test('missing boot DOM element fails explicitly', async () => {
@@ -20,7 +19,7 @@ test('missing boot DOM element fails explicitly', async () => {
 test.bundle=await fs.readFile(path.join(stage,'app.js'),'utf8');
 test('boot HTML is accessible and all references are relative and inventoried',async()=>{
   const html=await fs.readFile(path.join(root,'index.html'),'utf8');
-  assert.match(html,/<html lang="en">/);assert.match(html,/<main aria-labelledby="boot-title">/);assert.match(html,/role="status" aria-live="polite"/);assert.match(html,/<noscript>/);
+  assert.match(html,/<html lang="en">/);assert.equal((await boot()).get('frame-content').getAttribute('aria-labelledby'),'frame-title');assert.match(html,/role="status" aria-live="polite"/);assert.match(html,/<noscript>/);
   const urls=Array.from(html.matchAll(/(?:src|href)="([^"]+)"/g),m=>m[1]);assert.deepEqual(urls,['boot.css','app.js']);
   for(const url of urls){assert.ok(safeArchivePath(url));assert.ok(runtimeFiles.includes(url));}
   assert.match(html,/connect-src 'none'; media-src 'none'; object-src 'none'/);assert.doesNotMatch(html,/<(?:video|audio|iframe)\b|onload=|https?:\/\//i);

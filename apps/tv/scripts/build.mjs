@@ -18,4 +18,4 @@ const hashes = {};
 for (const name of runtimeFiles) hashes[name] = sha(await fs.readFile(path.join(stage,name)));
 await fs.writeFile(path.join(outputRoot,'inventory.json'),JSON.stringify(hashes,null,2)+'\n');
 await verifyStage();
-console.log('PASS: deterministic M1 staging (5 runtime files + SDK YAML). No package/install/launch.');
+console.log('PASS: deterministic static staging (5 runtime files + SDK YAML). No package/install/launch.');

@@ -22,7 +22,7 @@ public class VerifyWgtSecurity {
    reject("unexpected ZIP target",()->VerifyWgt.target("author-signature.xml",VerifyWgt.ASSETS,zip));
   }
   for(final String mode:Arrays.asList("tamper","unexpected","missing")){
-   Path copy=Files.createTempFile(original.getParent().getParent().getParent(),"security-",".zip");
+   Path copy=Files.createTempFile(original.getParent(),"security-",".zip");
    try{
     try(ZipFile zip=new ZipFile(original.toFile());ZipOutputStream out=new ZipOutputStream(Files.newOutputStream(copy))){
      Enumeration<? extends ZipEntry> entries=zip.entries();
